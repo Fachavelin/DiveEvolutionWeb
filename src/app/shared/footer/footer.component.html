@@ -1,0 +1,86 @@
+<div class="max-w-screen-xl mx-auto">
+  <a
+    class=""
+    href="https://api.whatsapp.com/send/?phone={{ phone }}"
+    target="_blank"
+    ><i
+      class="z-50 whatsappColor rounded-full p-2 fa-brands fa-whatsapp fa-3x fixed bottom-3 right-2 hover:animate-pulse"
+    ></i
+  ></a>
+</div>
+<div class="bg-gradient-to-r from-sky-700 to-sky-700 w-full">
+  <div class="max-w-screen-xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2">
+      <div
+        class="py-4 flex justify-center items-center text-white uppercase font-semibold text-base"
+      >
+        <!-- <img src="{{ logo1 }}" alt="" class="h-16 rounded-full" /> -->
+        <div class="grid">
+          <!-- <p class="ml-1">Dive Evolution</p> -->
+          <a class="hover:text-blue-200 cursor-pointer" href="">{{
+            datoNavbar[0]?.title
+          }}</a>
+          <a class="hover:text-blue-200 cursor-pointer" href="">{{
+            datoNavbar[1]?.title
+          }}</a>
+          <a class="hover:text-blue-200 cursor-pointer" href="">{{
+            datoNavbar[2]?.title
+          }}</a>
+          <a class="hover:text-blue-200 cursor-pointer" href="">{{
+            datoNavbar[3]?.title
+          }}</a>
+          <a class="hover:text-blue-200 cursor-pointer" href="">{{
+            datoNavbar[4]?.title
+          }}</a>
+        </div>
+      </div>
+      <div class="md:pt-3">
+        <div class="grid">
+          <div class="flex justify-center">
+            <p class="text-white font-semibold text-base text-center">
+              Encuentranos en nuestras redes
+            </p>
+          </div>
+          <div class="flex justify-around pt-3 md:pt-1">
+            <!--  <a
+              *ngFor="let item of footer"
+              class="z-50 bg-white rounded-full px-4 py-4"
+              href=""
+              target="_blank"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title=""
+              ><i class="fa-lg absolute -translate-x-2 text-indigo-800"></i
+            ></a> -->
+            <a
+              class="z-50 bg-white rounded-full px-1 py-1 fa-xl text-sky-800"
+              href="{{ socialMedia?.facebook }}"
+              target="_blank"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a
+              class="z-50 bg-white rounded-full px-1 py-1 fa-xl text-sky-800"
+              href="{{ socialMedia?.instagram }}"
+              target="_blank"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              class="z-50 bg-white rounded-full px-1 py-1 fa-xl text-sky-800"
+              href="{{ socialMedia?.twitter }}"
+              target="_blank"
+            >
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex justify-center text-white text-base pt-4 pb-3 border-t mt-4 md:mt-0 mx-4"
+    >
+      {{ copyright }}
+    </div>
+  </div>
+</div>

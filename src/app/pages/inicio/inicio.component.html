@@ -1,0 +1,106 @@
+<!-- Hero -->
+<div
+  class="h-96 md:h-140 w-full bg-cover bg-center bg-no-repeat"
+  style="background-image: url('{{ backGroundImg }}')"
+>
+  <div
+    class="text-white pt-8 lg:pt-20 text-center animate__animated animate__slideInDown"
+  >
+    <p class="text-3xl lg:text-7xl pb-5">{{ title }}</p>
+    <button class="btn-index">{{ button }}</button>
+  </div>
+</div>
+<!-- Section 1 -->
+<div class="grid lg:grid-cols-2 gap-6 lg:gap-20 text-white my-4">
+  <div class="lg:flex lg:justify-end justify-center">
+    <div class="flex justify-center lg:flex-none lg:justify-start pb-6 lg:pb-0">
+      <img
+        class="lg:absolute h-72 md:h-80 lg:-translate-y-4 lg:-translate-x-64 z-0"
+        src="{{ calidadImg[0] }}"
+        alt=""
+      />
+    </div>
+    <div class="flex justify-center overflow-x-hidden">
+      <div class="bg-black rounded-2xl max-w-xs z-20">
+        <div class="flex justify-center py-7">
+          <img class="h-20" src="{{ calidadImg[1] }}" alt="" />
+        </div>
+
+        <p class="text-center text-2xl font-bold">
+          {{ calidad![0] }}
+          <!-- <i class="fa-solid fa-shield ml-2"></i> -->
+        </p>
+        <p class="mx-5 text-lg font-semibold pb-7">
+          {{ calidad[1] }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="lg:flex lg:justify-start justify-center">
+    <div class="flex justify-center lg:flex-none lg:justify-start pb-6 lg:pb-0">
+      <img
+        class="lg:absolute h-72 md:h-80 lg:translate-y-4 lg:translate-x-60 z-0"
+        src="{{ precioImg[0] }}"
+        alt=""
+      />
+    </div>
+    <div class="flex justify-center">
+      <div class="bg-blue-700 rounded-2xl max-w-xs z-10">
+        <div class="flex justify-center py-7">
+          <img class="h-20" src="{{ precioImg[1] }}" alt="" />
+        </div>
+
+        <p class="text-center text-2xl font-bold">
+          {{ precio![0] }}
+          <!-- <i class="fa-solid fa-money-bill-wave ml-2"></i> -->
+        </p>
+        <p class="mx-5 text-lg font-semibold pb-7">
+          {{ precio![1] }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Section2 -->
+<div
+  class="h-96 md:h-140 w-full bg-cover bg-center bg-no-repeat"
+  style="background-image: url('{{ section2Img!.items[0] }}')"
+>
+  <div class="grid lg:grid-cols-3 md:pt-32" *ngIf="items !== undefined">
+    <div
+      class="text-white px-4 col-span-2 col-start-1 animate__animated animate__slideInLeft"
+    >
+      <p class="text-center text-4xl lg:text-6xl">
+        {{ items[0].title }}
+      </p>
+      <p class="text-2xl lg:text-4xl">{{ items[0].description }}</p>
+      <div class="text-center pt-3">
+        <button class="btn-index">
+          {{ items[0].button }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- prettier-ingnore -->
+<div
+  class="h-96 md:h-140 w-full bg-cover bg-center bg-no-repeat"
+  style="background-image: url('{{ section2Img!.items[1] }}')"
+>
+  <div class="grid lg:grid-cols-3 md:pt-32">
+    <div
+      class="text-white px-4 col-span-2 col-start-2 animate__animated animate__slideInRight"
+      style="animation-delay: 0.5s"
+    >
+      <p class="text-center text-4xl lg:text-6xl">
+        {{ items[1].title }}
+      </p>
+      <p class="text-2xl lg:text-4xl">{{ items[1].description }}</p>
+      <div class="text-center pt-3">
+        <button class="btn-index">
+          {{ items[1].button }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

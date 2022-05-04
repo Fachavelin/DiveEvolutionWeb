@@ -1,0 +1,172 @@
+<div class="bg-gradient-to-r from-sky-700 to-sky-700 w-full sticky top-0 z-50">
+  <div class="max-w-screen-2xl mx-auto">
+    <!-- Menu -->
+    <div class="flex">
+      <div
+        class="flex items-center text-white uppercase font-semibold text-lg ml-3 md:ml-7 py-2"
+      >
+        <img src="{{ images?.logo }}" alt="" class="h-20" />
+        <p class="ml-1">Dive Evolution</p>
+        <!-- Botton celular -->
+        <button
+          class="lg:hidden right-10 absolute border-2 border-blue-400 py-2 px-4 rounded hover:bg-blue-400"
+          (click)="abrir()"
+        >
+          <i class="{{ icono[indice] }}"></i>
+        </button>
+        <!-- Botton Lenguajes -->
+
+        <div class="hidden lg:grid gap-1 grid-cols-3 absolute right-1">
+          <button
+            *ngFor="let flag of flags; let pos = index"
+            ngClass="{{ selectedFlag === pos ? 'border-white' : '' }}"
+            class="hover:bg-blue-400 grid rounded-lg px-1 border border-blue-400"
+          >
+            <img
+              class="h-8 cursor-pointer"
+              [src]="flag"
+              (click)="selectFlag(pos)"
+            />
+          </button>
+        </div>
+
+        <!-- <button
+          (click)="abrirFlags()"
+          class="hidden lg:block right-24 absolute px-1 border-2 border-blue-400 rounded hover:bg-blue-400"
+        >
+          <img class="h-8" [src]="flags[selectedFlag]" />
+        </button> -->
+
+        <!-- <div
+          *ngIf="abiertoFlags"
+          class="right-12 top-7 absolute border-2 border-blue-400 rounded bg-black hidden lg:block"
+        >
+          <button
+            *ngFor="let flag of flags; let pos = index"
+            class="hover:bg-blue-400 grid px-1"
+          >
+            <img
+              class="h-8 cursor-pointer"
+              [src]="flag"
+              (click)="selectFlag(pos)"
+            />
+          </button>
+        </div> -->
+
+        <div
+          class="py-3 text-center font-semibold text-base hover:text-white rounded-md flex justify-around"
+        ></div>
+      </div>
+      <div
+        class="flex gap-6 ml-24 text-white hidden lg:block lg:flex lg:items-center"
+      >
+        <a
+          class="hover:text-blue-200 font-semibold cursor-pointer uppercase"
+          [routerLink]="rutas[0]"
+          >{{ items[0]?.title }}</a
+        >
+        <a
+          class="hover:text-blue-200 font-semibold cursor-pointer uppercase"
+          [routerLink]="rutas[1]"
+          >{{ items[1]?.title }}</a
+        >
+        <button
+          (click)="abrirTours()"
+          class="hover:text-blue-200 font-semibold cursor-pointer uppercase"
+        >
+          {{ items[2]?.title }}
+
+          <span class="rounded-lg">
+            <i class="{{ iconoTour[indiceTour] }}"></i>
+            <div *ngIf="abiertoTours" class="absolute mt-1 rounded-lg bg-black">
+              <a
+                class="px-3 py-3 text-white text-sm hover:bg-neutral-900 hover:rounded-lg grid"
+              >
+                {{ items[2].accordion[0] }}
+              </a>
+              <a
+                class="px-3 py-3 text-white text-sm hover:bg-neutral-900 hover:rounded-lg grid"
+              >
+                {{ items[2].accordion[1] }}
+              </a>
+              <a
+                class="px-3 py-3 text-white text-sm hover:bg-neutral-900 hover:rounded-lg grid"
+              >
+                {{ items[2].accordion[2] }}
+              </a>
+            </div>
+          </span>
+        </button>
+        <a class="hover:text-blue-200 font-semibold cursor-pointer uppercase">{{
+          items[3]?.title
+        }}</a>
+        <a class="hover:text-blue-200 font-semibold cursor-pointer uppercase">{{
+          items[4]?.title
+        }}</a>
+      </div>
+    </div>
+
+    <!-- Menu responsivo -->
+    <div
+      class="grid text-white lg:hidden border-t border-b border-blue-400"
+      *ngIf="indice == 1"
+    >
+      <a
+        [routerLink]="rutas[0]"
+        class="py-3 text-center font-semibold text-base hover:text-white hover:bg-blue-400 rounded-md cursor-pointer"
+        >{{ items[0]?.title }}</a
+      >
+      <a
+        [routerLink]="rutas[1]"
+        class="py-3 text-center font-semibold text-base hover:text-white hover:bg-blue-400 rounded-md cursor-pointer"
+        >{{ items[1]?.title }}</a
+      >
+      <button
+        class="py-3 text-center font-semibold text-base hover:text-white rounded-md"
+        (click)="abrirTours()"
+      >
+        {{ items[2]?.title }} <i class="{{ iconoTour[indiceTour] }}"></i>
+      </button>
+      <div class="grid" *ngIf="abiertoTours">
+        <a
+          class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 bg-black hover:rounded-md cursor-pointer"
+          href=""
+          >{{ items[2].accordion[0] }}</a
+        >
+        <a
+          class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 bg-black hover:rounded-md cursor-pointer"
+          href=""
+          >{{ items[2].accordion[1] }}</a
+        >
+        <a
+          class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 bg-black hover:rounded-md cursor-pointer"
+          href=""
+          >{{ items[2].accordion[2] }}</a
+        >
+      </div>
+      <a
+        class="py-3 text-center font-semibold text-base hover:text-white hover:bg-blue-400 rounded-md cursor-pointer"
+        >{{ items[3]?.title }}</a
+      >
+      <a
+        class="py-3 text-center font-semibold text-base hover:text-white hover:bg-blue-400 rounded-md cursor-pointer"
+        >{{ items[4]?.title }}</a
+      >
+      <div
+        class="py-3 text-center font-semibold text-base hover:text-white rounded-md flex justify-around"
+      >
+        <button
+          *ngFor="let flag of flags; let pos = index"
+          class="hover:bg-blue-400 grid rounded-lg px-2 py-1 border border-blue-400"
+          ngClass="{{ selectedFlag === pos ? 'border-white' : '' }}"
+        >
+          <img
+            class="h-8 cursor-pointer"
+            [src]="flag"
+            (click)="selectFlag(pos)"
+          />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
