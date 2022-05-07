@@ -15,6 +15,8 @@ export class InicioComponent implements OnInit {
   public title!: string;
   public button!: string;
 
+  public array: string[] = ['', '', '', ''];
+
   public backGroundImg: string = '';
   public calidadImg: string[] = ['', ''];
   public precioImg: string[] = ['', ''];

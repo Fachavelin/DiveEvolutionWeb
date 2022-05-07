@@ -1,4 +1,6 @@
-<div class="bg-gradient-to-r from-sky-700 to-sky-700 w-full sticky top-0 z-50">
+<div
+  class="bg-gradient-to-r w-full bg-sky-600 lg:bg-transparent absolute top-0 z-50"
+>
   <div class="max-w-screen-2xl mx-auto">
     <!-- Menu -->
     <div class="flex">
@@ -110,6 +112,7 @@
     <div
       class="grid text-white lg:hidden border-t border-b border-blue-400"
       *ngIf="indice == 1"
+      data-aos="fade-down"
     >
       <a
         [routerLink]="rutas[0]"
