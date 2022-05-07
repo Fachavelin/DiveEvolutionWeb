@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { NavBar, NavBarItem } from 'src/app/interfaces/navbar';
 import { SharedService } from 'src/app/Services/shared.service';
 
@@ -8,6 +9,8 @@ import { SharedService } from 'src/app/Services/shared.service';
   styles: [],
 })
 export class NavbarComponent implements OnInit {
+  @Input() rutas!: string[];
+
   public images!: any;
 
   public abierto: boolean = false;
@@ -33,18 +36,19 @@ export class NavbarComponent implements OnInit {
 
   public items: NavBarItem[] = [];
 
-  public rutas: string[] = ['', '/nosotros', '/contacto'];
-
-  constructor(private shared: SharedService) {
+  constructor(private shared: SharedService, translate: TranslateService) {
     if (localStorage.getItem('language') === null) {
       localStorage.setItem('language', 'es');
     }
+    const lang = localStorage.getItem('language') || 'es';
+    translate.setDefaultLang('es');
+    translate.use(lang);
   }
 
   ngOnInit(): void {
-    this.shared.cargarDatosNavbar().subscribe((data) => {
+    /* this.shared.cargarDatosNavbar().subscribe((data) => {
       this.items = data.navBar.nav_bar_items;
-    });
+    }); */
     this.shared.cargarImagenesNavbar().subscribe((data) => {
       this.images = data;
     });
@@ -52,7 +56,6 @@ export class NavbarComponent implements OnInit {
       case 'es':
         this.selectedFlag = 0;
         break;
-
       case 'en':
         this.selectedFlag = 1;
         break;

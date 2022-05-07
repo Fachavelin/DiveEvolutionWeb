@@ -26,6 +26,8 @@
     "@angular/router": "~13.3.0",
     "@ngneat/tailwind": "^7.0.3",
     "@nguniversal/express-engine": "^13.1.0",
+    "@ngx-translate/core": "^14.0.0",
+    "@ngx-translate/http-loader": "^7.0.0",
     "aos": "^2.3.4",
     "express": "^4.15.2",
     "localstorage-polyfill": "^1.0.1",

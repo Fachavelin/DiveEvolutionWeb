@@ -3,17 +3,22 @@ import { RouterModule, Routes } from '@angular/router';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
+import { SanCristobalComponent } from './pages/san-cristobal/san-cristobal.component';
+import { ToursComponent } from './pages/tours/tours.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
   { path: 'nosotros', component: NosotrosComponent },
   { path: 'cursos', component: CursosComponent },
+  { path: 'san-cristobal', component: SanCristobalComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {
-    initialNavigation: 'enabledBlocking'
-})],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabledBlocking',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

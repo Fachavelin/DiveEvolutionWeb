@@ -1,5 +1,5 @@
 <div
-  class="bg-gradient-to-r w-full bg-sky-600 lg:bg-transparent absolute top-0 z-50"
+  class="bg-gradient-to-r w-full bg-blue-400 lg:bg-transparent absolute top-0 z-50"
 >
   <div class="max-w-screen-2xl mx-auto">
     <!-- Menu -->
@@ -65,45 +65,46 @@
         <a
           class="hover:text-blue-200 font-semibold cursor-pointer uppercase"
           [routerLink]="rutas[0]"
-          >{{ items[0]?.title }}</a
+          >{{ "inicio" | translate }}</a
         >
         <a
           class="hover:text-blue-200 font-semibold cursor-pointer uppercase"
           [routerLink]="rutas[1]"
-          >{{ items[1]?.title }}</a
+          >{{ "nosotros" | translate }}</a
         >
         <button
           (click)="abrirTours()"
           class="hover:text-blue-200 font-semibold cursor-pointer uppercase"
         >
-          {{ items[2]?.title }}
+          {{ "tours" | translate }}
 
           <span class="rounded-lg">
             <i class="{{ iconoTour[indiceTour] }}"></i>
             <div *ngIf="abiertoTours" class="absolute mt-1 rounded-lg bg-black">
               <a
                 class="px-3 py-3 text-white text-sm hover:bg-neutral-900 hover:rounded-lg grid"
+                [routerLink]="rutas[2]"
               >
-                {{ items[2].accordion[0] }}
+                {{ "San Cristobal" }}
               </a>
               <a
                 class="px-3 py-3 text-white text-sm hover:bg-neutral-900 hover:rounded-lg grid"
               >
-                {{ items[2].accordion[1] }}
+                {{ "Santa Cruz" }}
               </a>
               <a
                 class="px-3 py-3 text-white text-sm hover:bg-neutral-900 hover:rounded-lg grid"
               >
-                {{ items[2].accordion[2] }}
+                {{ "Isabela" }}
               </a>
             </div>
           </span>
         </button>
         <a class="hover:text-blue-200 font-semibold cursor-pointer uppercase">{{
-          items[3]?.title
+          "cursos_de_buceo" | translate
         }}</a>
         <a class="hover:text-blue-200 font-semibold cursor-pointer uppercase">{{
-          items[4]?.title
+          "contacto" | translate
         }}</a>
       </div>
     </div>
@@ -117,43 +118,43 @@
       <a
         [routerLink]="rutas[0]"
         class="py-3 text-center font-semibold text-base hover:text-white hover:bg-blue-400 rounded-md cursor-pointer"
-        >{{ items[0]?.title }}</a
+        >{{ "inicio" | translate }}</a
       >
       <a
         [routerLink]="rutas[1]"
         class="py-3 text-center font-semibold text-base hover:text-white hover:bg-blue-400 rounded-md cursor-pointer"
-        >{{ items[1]?.title }}</a
+        >{{ "nosotros" | translate }}</a
       >
       <button
         class="py-3 text-center font-semibold text-base hover:text-white rounded-md"
         (click)="abrirTours()"
       >
-        {{ items[2]?.title }} <i class="{{ iconoTour[indiceTour] }}"></i>
+        {{ "tours" | translate }} <i class="{{ iconoTour[indiceTour] }}"></i>
       </button>
       <div class="grid" *ngIf="abiertoTours">
         <a
           class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 bg-black hover:rounded-md cursor-pointer"
           href=""
-          >{{ items[2].accordion[0] }}</a
+          >{{ "San Cristobal" }}</a
         >
         <a
           class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 bg-black hover:rounded-md cursor-pointer"
           href=""
-          >{{ items[2].accordion[1] }}</a
+          >{{ "Santa Cruz" }}</a
         >
         <a
           class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 bg-black hover:rounded-md cursor-pointer"
           href=""
-          >{{ items[2].accordion[2] }}</a
+          >{{ "Isabela" }}</a
         >
       </div>
       <a
         class="py-3 text-center font-semibold text-base hover:text-white hover:bg-blue-400 rounded-md cursor-pointer"
-        >{{ items[3]?.title }}</a
+        >{{ "cursos_de_buceo" | translate }}</a
       >
       <a
         class="py-3 text-center font-semibold text-base hover:text-white hover:bg-blue-400 rounded-md cursor-pointer"
-        >{{ items[4]?.title }}</a
+        >{{ "contacto" | translate }}</a
       >
       <div
         class="py-3 text-center font-semibold text-base hover:text-white rounded-md flex justify-around"

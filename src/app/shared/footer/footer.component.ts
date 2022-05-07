@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NavBarItem, SocialMedia } from 'src/app/interfaces/footer';
 import { SharedService } from 'src/app/Services/shared.service';
 
@@ -15,17 +15,22 @@ import { SharedService } from 'src/app/Services/shared.service';
   ],
 })
 export class FooterComponent implements OnInit {
-  public datoNavbar: NavBarItem[] = [];
+  @Input() rutas!: string[];
+
   public socialMedia!: SocialMedia;
   public phone!: string;
   public copyright!: string;
+  public imgData!: any;
 
   constructor(private shared: SharedService) {
     shared.cargarDatosFooter().subscribe((data) => {
-      this.datoNavbar = data.navBar.nav_bar_items;
       this.socialMedia = data.social_media;
       this.phone = data.phone;
       this.copyright = data.copyright;
+    });
+
+    shared.cargarImagenesFooter().subscribe((data) => {
+      this.imgData = data;
     });
   }
 

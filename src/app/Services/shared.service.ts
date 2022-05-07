@@ -14,11 +14,11 @@ export class SharedService {
     this.lang = localStorage.getItem('language') || 'es';
   }
 
-  cargarDatosNavbar() {
+  /* cargarDatosNavbar() {
     const url = `${this._baseUrl}/getHeader/${this.lang}`;
     console.log('first');
     return this.http.get<Header>(url);
-  }
+  } */
 
   cargarImagenesNavbar() {
     const url = `${this._baseUrl}/getHeaderImg`;
@@ -30,5 +30,11 @@ export class SharedService {
     const url = `${this._baseUrl}/getFooter/${this.lang}`;
 
     return this.http.get<Footer>(url);
+  }
+
+  cargarImagenesFooter() {
+    const url = `${this._baseUrl}/getFooterImg`;
+
+    return this.http.get(url);
   }
 }

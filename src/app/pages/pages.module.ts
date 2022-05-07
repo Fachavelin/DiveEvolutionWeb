@@ -5,6 +5,8 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { ContactoComponent } from './contacto/contacto.component';
 import { ToursComponent } from './tours/tours.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { SanCristobalComponent } from './san-cristobal/san-cristobal.component';
 
 @NgModule({
   declarations: [
@@ -13,13 +15,15 @@ import { ToursComponent } from './tours/tours.component';
     CursosComponent,
     ContactoComponent,
     ToursComponent,
+    SanCristobalComponent,
   ],
   exports: [
     InicioComponent,
     NosotrosComponent,
     CursosComponent,
     ContactoComponent,
+    SanCristobalComponent,
   ],
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
 })
 export class PagesModule {}

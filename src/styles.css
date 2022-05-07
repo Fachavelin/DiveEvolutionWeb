@@ -5,3 +5,6 @@
 .btn-index {
   @apply bg-black px-2 py-1 hover:bg-gray-900 cursor-pointer rounded-xl text-xl;
 }
+.btn-tours {
+  @apply text-center bg-gray-50 border-2 border-blue-500 text-blue-900 text-lg font-bold px-2 py-1 cursor-pointer rounded-md hover:bg-blue-500 hover:text-white;
+}

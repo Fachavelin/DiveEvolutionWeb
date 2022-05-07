@@ -1,0 +1,53 @@
+<!-- todo Img -->
+<div
+  class="h-136 w-full bg-cover bg-center bg-no-repeat"
+  style="
+    background-image: url('https://cdn.pixabay.com/photo/2021/08/25/05/01/boat-6572384_960_720.jpg');
+  "
+>
+  <div class="w-full h-128 flex justify-center items-center">
+    <div class="text-5xl lg:text-7xl text-white" data-aos="fade-down">
+      <p>{{ "Tours a San Cristobal" | translate }}</p>
+    </div>
+  </div>
+</div>
+<div class="w-full bg-gray-100">
+  <!-- todo Botones -->
+  <div class="max-w-3xl w-full mx-auto">
+    <div class="grid lg:grid-flow-col gap-3 mx-4 py-4">
+      <a class="btn-tours">
+        {{ "Tours de esnórquel" | translate }}
+      </a>
+      <a class="btn-tours">
+        {{ "Tours de buceo" | translate }}
+      </a>
+      <a class="btn-tours">
+        {{ "Tours de tierra" | translate }}
+      </a>
+    </div>
+  </div>
+  <!-- todo Tours -->
+  <div
+    *ngFor="let item of temp; let i = index"
+    class="lg:grid lg:grid-cols-3 max-w-5xl mx-auto bg-gray-50 rounded-xl shadow-2xl shadow-blue-200 mb-8"
+  >
+    <div class="row-start-1" ngClass="{{ i % 2 == 0 ? '' : 'lg:col-start-3' }}">
+      <img
+        src="https://cdn.pixabay.com/photo/2015/10/12/15/41/kayak-984566_960_720.jpg"
+        alt=""
+        class="w-full rounded-xl"
+      />
+    </div>
+    <div class="col-span-2">
+      <p class="text-center t">Lorem</p>
+      <p class="text-center">{{ "¿Que incluye?" | translate }}</p>
+      <ol class="text-center">
+        <li>sadsad sadsadsa sadsa dasd sadasd</li>
+        <li>sadsad sadsadsa sadsa dasd sadasd</li>
+        <li>sadsad sadsadsa sadsa dasd sadasd</li>
+        <li>sadsad sadsadsa sadsa dasd sadasd</li>
+        <li>sadsad sadsadsa sadsa dasd sadasd</li>
+      </ol>
+    </div>
+  </div>
+</div>
