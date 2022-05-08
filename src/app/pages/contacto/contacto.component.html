@@ -1,1 +1,130 @@
-<div class="bg-sky-500 h-20 w-full"></div>
+<div
+  class="h-160 w-full bg-cover bg-center bg-no-repeat"
+  style="
+    background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg');
+  "
+>
+  <div class="pt-28 mb-96 md:pt-40 mx-4 md:mx-0">
+    <div
+      class="max-w-5xl mx-auto bg-white md:grid md:grid-cols-3 sm:w-full rounded-sm"
+      *ngIf="datosContacto !== undefined && datosContacto !== null"
+      data-aos="fade-up"
+    >
+      <div class="bg-blue-600 md:my-2 md:ml-2 rounded-sm">
+        <div class="grid gap-2 text-white text-lg p-6">
+          <p class="text-center text-xl">
+            {{ datosContacto!.title }}
+          </p>
+          <p>
+            <i class="fa-solid fa-location-dot pr-2"></i
+            >{{ datosContacto!.contactInfo!.address }}
+          </p>
+          <p>
+            <i class="fa-solid fa-envelope pr-2"></i
+            >{{ datosContacto!.contactInfo!.email }}
+          </p>
+          <p>
+            <i class="fa-solid fa-mobile pr-2"></i>
+            {{ datosContacto!.contactInfo!.phone }}
+          </p>
+          <div class="flex justify-around pt-1">
+            <a
+              *ngIf="socialMedia?.facebook"
+              class="z-20 bg-white rounded-full px-1 py-1 fa-xl facebook"
+              href="{{ socialMedia?.facebook }}"
+              target="_blank"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a
+              *ngIf="socialMedia?.instagram"
+              class="z-20 bg-white rounded-full px-1 py-1 fa-xl instagram"
+              href="{{ socialMedia?.instagram }}"
+              target="_blank"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              *ngIf="socialMedia?.twitter"
+              class="z-20 bg-white rounded-full px-1 fa-xl py-1 twitter"
+              href="{{ socialMedia?.twitter }}"
+              target="_blank"
+            >
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="md:col-span-2">
+        <form action="" [formGroup]="contactoForm">
+          <div class="grid ml-4 mr-4 my-4">
+            <p class="text-center text-2xl">{{ datosContacto!.formtitle }}</p>
+            <p class="pb-2">{{ datosContacto!.introduction }}</p>
+            <div class="grid">
+              <label for="">Nombre</label>
+              <input
+                class="text-black border border-black py-1"
+                type="nombre"
+                formControlName="nombre"
+              />
+              <div
+                *ngIf="validarCampo('nombre')"
+                class="text-right text-base font-light"
+              >
+                <span class="">Ingrese un correo electrónico válido</span>
+              </div>
+            </div>
+            <div class="grid">
+              <label for="">Correo electrónico</label>
+              <input
+                class="text-black border border-black py-1"
+                type="email"
+                formControlName="email"
+              />
+              <div
+                *ngIf="validarCampo('email')"
+                class="text-right text-base font-light"
+              >
+                <span class="">Ingrese un correo electrónico válido</span>
+              </div>
+            </div>
+            <div class="grid">
+              <label for="">Número teléfono</label>
+              <input
+                class="text-black border border-black py-1"
+                type="number"
+                formControlName="telefono"
+              />
+              <span
+                *ngIf="validarCampo('telefono')"
+                class="text-right text-base font-light"
+                >Ingrese un número de teléfono válido</span
+              >
+            </div>
+            <div class="grid">
+              <label for="">Asunto</label>
+              <textarea
+                class="text-black px-3 py-2 text-base border border-black"
+                for=""
+                rows="5"
+                formControlName="asunto"
+              ></textarea>
+              <span
+                *ngIf="validarCampo('asunto')"
+                class="text-right text-base font-light"
+                >Es necesario ingresar el asunto</span
+              >
+            </div>
+            <div class="flex justify-center pt-3 pb-3 md:pb-0">
+              <button
+                class="bg-blue-300 text-blue-800 text-lg font-semibold rounded-lg py-2 px-4 text-center"
+              >
+                {{ datosContacto!.button }}
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

@@ -24,4 +24,10 @@ export class PagesService {
 
     return this.http.get<ImgBody>(url);
   }
+
+  cargarDatosContacto() {
+    const url = `${this._baseUrl}/getContact/${this.lang}`;
+
+    return this.http.get(url);
+  }
 }

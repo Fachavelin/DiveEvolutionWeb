@@ -1,10 +1,10 @@
 <!-- Hero -->
 <div
   *ngIf="backGroundImg.length > 1"
-  class="h-96 md:h-screen w-full bg-cover bg-center bg-no-repeat mt-20 lg:mt-0"
+  class="h-screen w-full bg-cover bg-center bg-no-repeat"
   style="background-image: url('{{ backGroundImg }}')"
 >
-  <div class="text-white pt-8 lg:pt-32 text-center" data-aos="fade-down">
+  <div class="text-white pt-32 text-center" data-aos="fade-down">
     <p class="text-3xl lg:text-7xl pb-5">{{ title }}</p>
     <button class="btn-index">{{ button }}</button>
   </div>
@@ -53,7 +53,7 @@
     <div class="flex justify-center">
       <div
         class="bg-blue-700 rounded-2xl max-w-xs z-10"
-        data-aos="fade-up-left"
+        data-aos="fade-up-right"
         data-aos-easing="linear"
         data-aos-duration="1000"
       >
@@ -98,7 +98,7 @@
   class="h-96 md:h-140 w-full bg-cover bg-center bg-no-repeat"
   style="background-image: url('{{ section2Img!.items[1] }}')"
 >
-  <div class="grid lg:grid-cols-3 md:pt-32" data-aos="fade-left">
+  <div class="grid lg:grid-cols-3 md:pt-32" data-aos="fade-right">
     <div class="text-white px-4 col-span-2 col-start-2">
       <p class="text-center text-4xl lg:text-6xl">
         {{ items[1].title }}

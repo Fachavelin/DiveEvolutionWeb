@@ -8,7 +8,7 @@ import * as AOS from 'aos';
 export class AppComponent {
   title = 'Dive Evolution';
 
-  public rutas: string[] = ['', '/nosotros', '/san-cristobal'];
+  public rutas: string[] = ['', '/nosotros', '/san-cristobal', '', '/contacto'];
 
   ngOnInit() {
     AOS.init(/* { once: true } */);

@@ -7,6 +7,7 @@ import { ContactoComponent } from './contacto/contacto.component';
 import { ToursComponent } from './tours/tours.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { SanCristobalComponent } from './san-cristobal/san-cristobal.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,6 @@ import { SanCristobalComponent } from './san-cristobal/san-cristobal.component';
     ContactoComponent,
     SanCristobalComponent,
   ],
-  imports: [CommonModule, TranslateModule],
+  imports: [CommonModule, TranslateModule, ReactiveFormsModule],
 })
 export class PagesModule {}

@@ -1,6 +1,4 @@
-<div
-  class="bg-gradient-to-r w-full bg-blue-400 lg:bg-transparent absolute top-0 z-50"
->
+<div class="bg-gradient-to-r w-full absolute top-0 z-50">
   <div class="max-w-screen-2xl mx-auto">
     <!-- Menu -->
     <div class="flex">
@@ -11,7 +9,7 @@
         <p class="ml-1">Dive Evolution</p>
         <!-- Botton celular -->
         <button
-          class="lg:hidden right-10 absolute border-2 border-blue-400 py-2 px-4 rounded hover:bg-blue-400"
+          class="lg:hidden right-10 absolute border-2 bg-blue-500 py-2 px-4 rounded hover:bg-blue-400"
           (click)="abrir()"
         >
           <i class="{{ icono[indice] }}"></i>
@@ -100,18 +98,22 @@
             </div>
           </span>
         </button>
-        <a class="hover:text-blue-200 font-semibold cursor-pointer uppercase">{{
-          "cursos_de_buceo" | translate
-        }}</a>
-        <a class="hover:text-blue-200 font-semibold cursor-pointer uppercase">{{
-          "contacto" | translate
-        }}</a>
+        <a
+          class="hover:text-blue-200 font-semibold cursor-pointer uppercase"
+          [routerLink]="rutas[3]"
+          >{{ "cursos_de_buceo" | translate }}</a
+        >
+        <a
+          class="hover:text-blue-200 font-semibold cursor-pointer uppercase"
+          [routerLink]="rutas[4]"
+          >{{ "contacto" | translate }}</a
+        >
       </div>
     </div>
 
     <!-- Menu responsivo -->
     <div
-      class="grid text-white lg:hidden border-t border-b border-blue-400"
+      class="grid bg-white lg:hidden border-t border-b border-blue-400 z-50"
       *ngIf="indice == 1"
       data-aos="fade-down"
     >
@@ -126,34 +128,36 @@
         >{{ "nosotros" | translate }}</a
       >
       <button
-        class="py-3 text-center font-semibold text-base hover:text-white rounded-md"
+        class="py-3 text-center font-semibold text-base hover:text-white hover:bg-blue-400 rounded-md cursor-pointer"
         (click)="abrirTours()"
       >
         {{ "tours" | translate }} <i class="{{ iconoTour[indiceTour] }}"></i>
       </button>
-      <div class="grid" *ngIf="abiertoTours">
+      <div class="grid bg-black text-white" *ngIf="abiertoTours">
         <a
-          class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 bg-black hover:rounded-md cursor-pointer"
-          href=""
+          class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 cursor-pointer"
+          [routerLink]="rutas[2]"
           >{{ "San Cristobal" }}</a
         >
         <a
-          class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 bg-black hover:rounded-md cursor-pointer"
+          class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 cursor-pointer"
           href=""
           >{{ "Santa Cruz" }}</a
         >
         <a
-          class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 bg-black hover:rounded-md cursor-pointer"
+          class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 cursor-pointer"
           href=""
           >{{ "Isabela" }}</a
         >
       </div>
       <a
         class="py-3 text-center font-semibold text-base hover:text-white hover:bg-blue-400 rounded-md cursor-pointer"
+        [routerLink]="rutas[3]"
         >{{ "cursos_de_buceo" | translate }}</a
       >
       <a
         class="py-3 text-center font-semibold text-base hover:text-white hover:bg-blue-400 rounded-md cursor-pointer"
+        [routerLink]="rutas[4]"
         >{{ "contacto" | translate }}</a
       >
       <div

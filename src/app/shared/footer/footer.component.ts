@@ -5,14 +5,7 @@ import { SharedService } from 'src/app/Services/shared.service';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styles: [
-    `
-      .whatsappColor {
-        background-color: #25d366;
-        color: white;
-      }
-    `,
-  ],
+  styles: [``],
 })
 export class FooterComponent implements OnInit {
   @Input() rutas!: string[];

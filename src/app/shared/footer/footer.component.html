@@ -1,10 +1,10 @@
-<div class="max-w-screen-xl mx-auto">
+<div class="">
   <a
     class=""
     href="https://api.whatsapp.com/send/?phone={{ phone }}"
     target="_blank"
     ><i
-      class="z-50 whatsappColor rounded-full p-2 fa-brands fa-whatsapp fa-3x fixed bottom-3 right-2 hover:animate-pulse"
+      class="z-50 whatsappColor rounded-full p-2 fa-brands fa-whatsapp fa-3x fixed bottom-3 right-2 hover:animate-bounce"
     ></i
   ></a>
 </div>
@@ -32,15 +32,21 @@
             [routerLink]="rutas[1]"
             >{{ "nosotros" | translate }}</a
           >
-          <a class="hover:text-blue-200 cursor-pointer" [routerLink]="">{{
-            "tours" | translate
-          }}</a>
-          <a class="hover:text-blue-200 cursor-pointer" [routerLink]="">{{
-            "cursos_de_buceo" | translate
-          }}</a>
-          <a class="hover:text-blue-200 cursor-pointer" [routerLink]="">{{
-            "contacto" | translate
-          }}</a>
+          <a
+            class="hover:text-blue-200 cursor-pointer"
+            [routerLink]="rutas[2]"
+            >{{ "tours" | translate }}</a
+          >
+          <a
+            class="hover:text-blue-200 cursor-pointer"
+            [routerLink]="rutas[3]"
+            >{{ "cursos_de_buceo" | translate }}</a
+          >
+          <a
+            class="hover:text-blue-200 cursor-pointer"
+            [routerLink]="rutas[4]"
+            >{{ "contacto" | translate }}</a
+          >
         </div>
       </div>
       <div class="md:pt-3">
@@ -63,7 +69,7 @@
             ></a> -->
             <a
               *ngIf="socialMedia?.facebook"
-              class="z-50 bg-white rounded-full px-1 py-1 fa-xl text-sky-800"
+              class="z-50 bg-white rounded-full px-1 py-1 fa-xl facebook"
               href="{{ socialMedia?.facebook }}"
               target="_blank"
             >
@@ -71,7 +77,7 @@
             </a>
             <a
               *ngIf="socialMedia?.instagram"
-              class="z-50 bg-white rounded-full px-1 py-1 fa-xl text-sky-800"
+              class="z-50 bg-white rounded-full px-1 py-1 fa-xl instagram"
               href="{{ socialMedia?.instagram }}"
               target="_blank"
             >
@@ -79,7 +85,7 @@
             </a>
             <a
               *ngIf="socialMedia?.twitter"
-              class="z-50 bg-white rounded-full px-1 py-1 fa-xl text-sky-800"
+              class="z-50 bg-white rounded-full px-1 fa-xl py-1 twitter"
               href="{{ socialMedia?.twitter }}"
               target="_blank"
             >
