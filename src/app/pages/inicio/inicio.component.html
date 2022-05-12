@@ -10,7 +10,7 @@
   </div>
 </div>
 <!-- Section 1 -->
-<div
+<!-- <div
   *ngIf="calidad.length > 1 && precio.length > 1"
   class="grid lg:grid-cols-2 gap-6 lg:gap-20 text-white my-4"
 >
@@ -34,7 +34,7 @@
 
         <p class="text-center text-2xl font-bold">
           {{ calidad![0] }}
-          <!-- <i class="fa-solid fa-shield ml-2"></i> -->
+        
         </p>
         <p class="mx-5 text-lg font-semibold pb-7">
           {{ calidad[1] }}
@@ -63,10 +63,63 @@
 
         <p class="text-center text-2xl font-bold">
           {{ precio![0] }}
+        
+        </p>
+        <p class="mx-5 text-lg font-semibold pb-7">
+          {{ precio![1] }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+ -->
+
+<div
+  class="md:grid md:grid-cols-2 text-white"
+  *ngIf="calidad.length > 1 && precio.length > 1"
+>
+  <div
+    class="bg-cover bg-center bg-no-repeat object-cover w-full h-96 flex md:justify-end justify-center items-center overflow-hidden"
+    style="background-image: url('{{ calidadImg[0] }}')"
+  >
+    <div class="">
+      <div
+        class="bg-indigo-600 rounded-2xl max-w-xs z-10 md:mr-8"
+        data-aos="fade-down"
+      >
+        <div class="flex justify-center py-7">
+          <img class="h-20" src="{{ precioImg[1] }}" alt="" />
+        </div>
+
+        <p class="text-center text-2xl font-bold">
+          {{ precio![0] }}
           <!-- <i class="fa-solid fa-money-bill-wave ml-2"></i> -->
         </p>
         <p class="mx-5 text-lg font-semibold pb-7">
           {{ precio![1] }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div
+    class="bg-cover bg-center bg-no-repeat object-cover w-full h-96 flex justify-center md:justify-start items-center overflow-hidden"
+    style="background-image: url('{{ precioImg[0] }}')"
+  >
+    <div class="">
+      <div
+        class="bg-black rounded-2xl max-w-xs z-10 md:ml-8"
+        data-aos="fade-down"
+      >
+        <div class="flex justify-center py-7">
+          <img class="h-20" src="{{ calidadImg[1] }}" alt="" />
+        </div>
+
+        <p class="text-center text-2xl font-bold">
+          {{ calidad![0] }}
+          <!-- <i class="fa-solid fa-shield ml-2"></i> -->
+        </p>
+        <p class="mx-5 text-lg font-semibold pb-7">
+          {{ calidad[1] }}
         </p>
       </div>
     </div>

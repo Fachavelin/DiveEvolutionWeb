@@ -4,7 +4,7 @@
     href="https://api.whatsapp.com/send/?phone={{ phone }}"
     target="_blank"
     ><i
-      class="z-50 whatsappColor rounded-full p-2 fa-brands fa-whatsapp fa-3x fixed bottom-3 right-2 hover:animate-bounce"
+      class="z-50 whatsappColor rounded-full p-2 fa-brands fa-whatsapp fa-3x fixed bottom-3 right-2 animate-bounce"
     ></i
   ></a>
 </div>
@@ -22,31 +22,21 @@
         />
         <div class="grid">
           <!-- <p class="ml-1">Dive Evolution</p> -->
-          <a
-            class="hover:text-blue-200 cursor-pointer"
-            [routerLink]="rutas[0]"
-            >{{ "inicio" | translate }}</a
-          >
-          <a
-            class="hover:text-blue-200 cursor-pointer"
-            [routerLink]="rutas[1]"
-            >{{ "nosotros" | translate }}</a
-          >
-          <a
-            class="hover:text-blue-200 cursor-pointer"
-            [routerLink]="rutas[2]"
-            >{{ "tours" | translate }}</a
-          >
-          <a
-            class="hover:text-blue-200 cursor-pointer"
-            [routerLink]="rutas[3]"
-            >{{ "cursos_de_buceo" | translate }}</a
-          >
-          <a
-            class="hover:text-blue-200 cursor-pointer"
-            [routerLink]="rutas[4]"
-            >{{ "contacto" | translate }}</a
-          >
+          <a class="hover:scale-105 cursor-pointer" [routerLink]="rutas[0]">{{
+            "inicio" | translate
+          }}</a>
+          <a class="hover:scale-105 cursor-pointer" [routerLink]="rutas[1]">{{
+            "nosotros" | translate
+          }}</a>
+          <a class="hover:scale-105 cursor-pointer" [routerLink]="rutas[2]">{{
+            "tours" | translate
+          }}</a>
+          <a class="hover:scale-105 cursor-pointer" [routerLink]="rutas[3]">{{
+            "cursos_de_buceo" | translate
+          }}</a>
+          <a class="hover:scale-105 cursor-pointer" [routerLink]="rutas[4]">{{
+            "contacto" | translate
+          }}</a>
         </div>
       </div>
       <div class="md:pt-3">
@@ -69,7 +59,7 @@
             ></a> -->
             <a
               *ngIf="socialMedia?.facebook"
-              class="z-50 bg-white rounded-full px-1 py-1 fa-xl facebook"
+              class="z-50 hover:scale-105 bg-white rounded-full px-1 py-1 fa-xl facebook"
               href="{{ socialMedia?.facebook }}"
               target="_blank"
             >
@@ -77,7 +67,7 @@
             </a>
             <a
               *ngIf="socialMedia?.instagram"
-              class="z-50 bg-white rounded-full px-1 py-1 fa-xl instagram"
+              class="z-50 hover:scale-105 bg-white rounded-full px-1 py-1 fa-xl instagram"
               href="{{ socialMedia?.instagram }}"
               target="_blank"
             >
@@ -85,7 +75,7 @@
             </a>
             <a
               *ngIf="socialMedia?.twitter"
-              class="z-50 bg-white rounded-full px-1 fa-xl py-1 twitter"
+              class="z-50 hover:scale-105 bg-white rounded-full px-1 fa-xl py-1 twitter"
               href="{{ socialMedia?.twitter }}"
               target="_blank"
             >

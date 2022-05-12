@@ -8,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 export class SanCristobalComponent implements OnInit {
   public temp: string[] = ['', '', '', '', ''];
 
+  public selectedButton: number = 0;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  public cambiarButton(num: number): void {
+    this.selectedButton = num;
+  }
 }

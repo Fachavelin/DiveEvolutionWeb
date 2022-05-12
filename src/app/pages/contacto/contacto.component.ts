@@ -11,6 +11,8 @@ import { SharedService } from 'src/app/Services/shared.service';
 })
 export class ContactoComponent implements OnInit {
   public datosContacto!: any;
+  public contactoImg!: any;
+  public phone!: string;
   public socialMedia!: SocialMedia;
 
   contactoForm = this.fb.group({
@@ -32,6 +34,11 @@ export class ContactoComponent implements OnInit {
     });
     this.shared.cargarDatosFooter().subscribe((data) => {
       this.socialMedia = data.social_media;
+      this.phone = data.phone;
+      console.log(data);
+    });
+    this.pages.cargarImagenesContacto().subscribe((data) => {
+      this.contactoImg = data;
     });
   }
 

@@ -1,7 +1,184 @@
 <div
+  class="w-full h-172 md:h-156 bg-cover bg-center bg-no-repeat"
+  style="
+   background-image: url('{{ contactoImg!.background }}');
+ "
+>
+  <div class="pt-20 md:pt-24 mx-4 md:mx-0">
+    <div
+      class="max-w-4xl mx-auto text-5xl lg:text-7xl text-white pt-6 px-6 pb-6 md:pb-6"
+      data-aos="fade-down"
+    >
+      <p class="text-center md:text-right md:translate-y-48">
+        {{ datosContacto!.title }}
+      </p>
+    </div>
+    <div class="max-w-4xl mx-auto">
+      <div class="grid md:grid-cols-2 h-120">
+        <div
+          class="bg-cover bg-center bg-no-repeat w-full flex justify-center items-end h-96 md:h-140 md:-translate-y-20"
+          style="
+          background-image: url('{{ contactoImg!.foreground }}');
+          "
+          data-aos="fade-up"
+        >
+          <a
+            class="bg-white text-indigo-800 hover:bg-indigo-400 hover:text-white text-lg font-semibold py-10 w-full text-center uppercase"
+            target="_blank"
+            href="https://api.whatsapp.com/send/?phone={{ phone }}"
+          >
+            {{ datosContacto!.button }}
+          </a>
+        </div>
+        <div class="md:-translate-y-4 flex items-end" data-aos="fade-down">
+          <div
+            class="grid gap-10 text-white text-lg pl-10 pr-6 bg-indigo-700 py-20"
+          >
+            <p class="text-center text-xl">
+              {{ datosContacto!.introduction }}
+            </p>
+            <p>
+              <i class="fa-solid fa-location-dot pr-4"></i
+              >{{ datosContacto!.contactInfo!.address }}
+            </p>
+            <p>
+              <i class="fa-solid fa-envelope pr-4"></i
+              >{{ datosContacto!.contactInfo!.email }}
+            </p>
+            <p>
+              <i class="fa-solid fa-mobile pr-4"></i>
+              {{ datosContacto!.contactInfo!.phone }}
+            </p>
+            <div class="flex justify-around items-end">
+              <a
+                *ngIf="socialMedia?.facebook"
+                class="hover:scale-105 z-20 bg-white rounded-full px-1 py-1 fa-xl facebook"
+                href="{{ socialMedia?.facebook }}"
+                target="_blank"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                *ngIf="socialMedia?.instagram"
+                class="hover:scale-105 z-20 bg-white rounded-full px-1 py-1 fa-xl instagram"
+                href="{{ socialMedia?.instagram }}"
+                target="_blank"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                *ngIf="socialMedia?.twitter"
+                class="hover:scale-105 z-20 bg-white rounded-full px-1 fa-xl py-1 twitter"
+                href="{{ socialMedia?.twitter }}"
+                target="_blank"
+              >
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="bg-cover bg-center bg-no-repeat w-full"
+  style="
+   background-image: url('{{ contactoImg!.form }}');
+ "
+>
+  <div class="max-w-4xl mx-auto py-20">
+    <form action="" [formGroup]="contactoForm">
+      <div class="grid ml-4 mr-4 text-white" data-aos="fade-up">
+        <p class="text-2xl pb-3 font-semibold">
+          {{ datosContacto!.formtitle }}
+        </p>
+
+        <div class="grid mb-8">
+          <!-- <label class="font-medium text-lg" for="">{{
+            "Nombre" | translate
+          }}</label> -->
+          <input
+            class="text-black border border-gray-300 rounded-md p-2"
+            type="nombre"
+            formControlName="nombre"
+            placeholder="{{ 'Nombre' | translate }}"
+          />
+          <div
+            *ngIf="validarCampo('nombre')"
+            class="text-right text-base font-light"
+          >
+            <span class="">{{ "Ingrese un nombre" | translate }}</span>
+          </div>
+        </div>
+        <div class="grid mb-8">
+          <!-- <label class="font-medium text-lg" for="">{{
+            "Correo electrónico" | translate
+          }}</label> -->
+          <input
+            class="text-black border border-gray-300 rounded-md p-2"
+            type="email"
+            formControlName="email"
+            placeholder="{{ 'Correo electrónico' | translate }}"
+          />
+          <div
+            *ngIf="validarCampo('email')"
+            class="text-right text-base font-light"
+          >
+            <span class="">{{
+              "Ingrese un correo electrónico válido" | translate
+            }}</span>
+          </div>
+        </div>
+        <div class="grid mb-8">
+          <!-- <label class="font-medium text-lg" for="">{{
+            "Número teléfono" | translate
+          }}</label> -->
+          <input
+            class="text-black border border-gray-300 rounded-md p-2"
+            type="number"
+            formControlName="telefono"
+            placeholder="{{ 'Número teléfono' | translate }}"
+          />
+          <span
+            *ngIf="validarCampo('telefono')"
+            class="text-right text-base font-light"
+            >{{ "Ingrese un número de teléfono válido" | translate }}</span
+          >
+        </div>
+        <div class="grid mb-8">
+          <!--  <label class="font-medium text-lg" for="">{{
+            "Asunto" | translate
+          }}</label> -->
+          <textarea
+            class="text-black p-2 text-base border border-gray-300 rounded-md"
+            for=""
+            rows="5"
+            formControlName="asunto"
+            placeholder="{{ 'Asunto' | translate }}"
+          ></textarea>
+          <span
+            *ngIf="validarCampo('asunto')"
+            class="text-right text-base font-light"
+            >{{ "Es necesario ingresar el asunto" | translate }}</span
+          >
+        </div>
+        <div class="flex md:justify-end pb-3 md:pb-0">
+          <button
+            class="bg-white w-full md:w-auto text-indigo-800 hover:bg-indigo-400 hover:text-white text-lg font-semibold rounded-lg py-2 px-4 text-center"
+          >
+            {{ datosContacto!.button }}
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- <div
   class="h-160 w-full bg-cover bg-center bg-no-repeat"
   style="
-    background-image: url('https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg');
+    background-image: url('{{ contactoImg!.background }}');
   "
 >
   <div class="pt-28 mb-96 md:pt-40 mx-4 md:mx-0">
@@ -10,7 +187,12 @@
       *ngIf="datosContacto !== undefined && datosContacto !== null"
       data-aos="fade-up"
     >
-      <div class="bg-blue-600 md:my-2 md:ml-2 rounded-sm">
+      <div
+        class="bg-blue-600 md:my-2 md:ml-2 rounded-sm bg-cover bg-center bg-no-repeat"
+        style="
+        background-image: url('{{ contactoImg!.foreground }}');
+        "
+      >
         <div class="grid gap-2 text-white text-lg p-6">
           <p class="text-center text-xl">
             {{ datosContacto!.title }}
@@ -30,7 +212,7 @@
           <div class="flex justify-around pt-1">
             <a
               *ngIf="socialMedia?.facebook"
-              class="z-20 bg-white rounded-full px-1 py-1 fa-xl facebook"
+              class="hover:scale-105 z-20 bg-white rounded-full px-1 py-1 fa-xl facebook"
               href="{{ socialMedia?.facebook }}"
               target="_blank"
             >
@@ -38,7 +220,7 @@
             </a>
             <a
               *ngIf="socialMedia?.instagram"
-              class="z-20 bg-white rounded-full px-1 py-1 fa-xl instagram"
+              class="hover:scale-105 z-20 bg-white rounded-full px-1 py-1 fa-xl instagram"
               href="{{ socialMedia?.instagram }}"
               target="_blank"
             >
@@ -46,7 +228,7 @@
             </a>
             <a
               *ngIf="socialMedia?.twitter"
-              class="z-20 bg-white rounded-full px-1 fa-xl py-1 twitter"
+              class="hover:scale-105 z-20 bg-white rounded-full px-1 fa-xl py-1 twitter"
               href="{{ socialMedia?.twitter }}"
               target="_blank"
             >
@@ -55,15 +237,19 @@
           </div>
         </div>
       </div>
-      <div class="md:col-span-2">
+      <div class="md:col-span-2 bg-cover bg-center bg-no-repeat">
         <form action="" [formGroup]="contactoForm">
-          <div class="grid ml-4 mr-4 my-4">
-            <p class="text-center text-2xl">{{ datosContacto!.formtitle }}</p>
-            <p class="pb-2">{{ datosContacto!.introduction }}</p>
+          <div class="grid ml-4 mr-4 my-4 text-black">
+            <p class="text-center text-2xl font-semibold">
+              {{ datosContacto!.formtitle }}
+            </p>
+            <p class="pb-2 font-medium">{{ datosContacto!.introduction }}</p>
             <div class="grid">
-              <label for="">Nombre</label>
+              <label class="font-medium text-lg" for="">{{
+                "Nombre" | translate
+              }}</label>
               <input
-                class="text-black border border-black py-1"
+                class="text-black border border-gray-300 rounded-md py-1"
                 type="nombre"
                 formControlName="nombre"
               />
@@ -71,13 +257,15 @@
                 *ngIf="validarCampo('nombre')"
                 class="text-right text-base font-light"
               >
-                <span class="">Ingrese un correo electrónico válido</span>
+                <span class="">{{ "Ingrese un nombre" | translate }}</span>
               </div>
             </div>
             <div class="grid">
-              <label for="">Correo electrónico</label>
+              <label class="font-medium text-lg" for="">{{
+                "Correo electrónico" | translate
+              }}</label>
               <input
-                class="text-black border border-black py-1"
+                class="text-black border border-gray-300 rounded-md py-1"
                 type="email"
                 formControlName="email"
               />
@@ -85,26 +273,32 @@
                 *ngIf="validarCampo('email')"
                 class="text-right text-base font-light"
               >
-                <span class="">Ingrese un correo electrónico válido</span>
+                <span class="">{{
+                  "Ingrese un correo electrónico válido" | translate
+                }}</span>
               </div>
             </div>
             <div class="grid">
-              <label for="">Número teléfono</label>
+              <label class="font-medium text-lg" for="">{{
+                "Número teléfono" | translate
+              }}</label>
               <input
-                class="text-black border border-black py-1"
+                class="text-black border border-gray-300 rounded-md py-1"
                 type="number"
                 formControlName="telefono"
               />
               <span
                 *ngIf="validarCampo('telefono')"
                 class="text-right text-base font-light"
-                >Ingrese un número de teléfono válido</span
+                >{{ "Ingrese un número de teléfono válido" | translate }}</span
               >
             </div>
             <div class="grid">
-              <label for="">Asunto</label>
+              <label class="font-medium text-lg" for="">{{
+                "Asunto" | translate
+              }}</label>
               <textarea
-                class="text-black px-3 py-2 text-base border border-black"
+                class="text-black px-3 py-2 text-base border border-gray-300 rounded-md"
                 for=""
                 rows="5"
                 formControlName="asunto"
@@ -112,7 +306,7 @@
               <span
                 *ngIf="validarCampo('asunto')"
                 class="text-right text-base font-light"
-                >Es necesario ingresar el asunto</span
+                >{{ "Es necesario ingresar el asunto" | translate }}</span
               >
             </div>
             <div class="flex justify-center pt-3 pb-3 md:pb-0">
@@ -128,3 +322,4 @@
     </div>
   </div>
 </div>
+ -->

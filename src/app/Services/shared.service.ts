@@ -7,7 +7,7 @@ import { Header } from '../interfaces/navbar';
   providedIn: 'root',
 })
 export class SharedService {
-  private _baseUrl = 'https://dive-evolution.herokuapp.com/api';
+  private _baseUrl = 'https://diveevolution-backend.herokuapp.com/api';
   private lang;
 
   constructor(private http: HttpClient) {

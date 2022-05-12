@@ -9,5 +9,15 @@
   "Tours a San Cristobal": "FR Tours a San Cristobal",
   "Tours de esnórquel": "FRSnorkel Tours",
   "Tours de buceo": "FRDiving Tours",
-  "Tours de tierra": "FRLand Tours"
+  "Tours de tierra": "FRLand Tours",
+  "Nombre": "FRName",
+  "Ingrese un nombre": "FREnter a name",
+  "Correo electrónico": "FREmail",
+  "Ingrese un correo electrónico válido": "FREnter a valid email",
+  "Número teléfono": "FRTelefone number",
+  "Ingrese un número de teléfono válido": "FREnter a valid telefone number",
+  "Asunto": "FRSubject",
+  "Es necesario ingresar el asunto": "FREnter a subject",
+  "Tipo de cursos": "FRType of courses",
+  "Metodología": "FRMethodology"
 }

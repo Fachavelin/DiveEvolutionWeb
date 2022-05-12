@@ -9,5 +9,15 @@
   "Tours a San Cristobal": "Tours in San Cristobal",
   "Tours de esnórquel": "Snorkel Tours",
   "Tours de buceo": "Diving Tours",
-  "Tours de tierra": "Land Tours"
+  "Tours de tierra": "Land Tours",
+  "Nombre": "Name",
+  "Ingrese un nombre": "Enter a name",
+  "Correo electrónico": "Email",
+  "Ingrese un correo electrónico válido": "Enter a valid email",
+  "Número teléfono": "Telefone number",
+  "Ingrese un número de teléfono válido": "Enter a valid telefone number",
+  "Asunto": "Subject",
+  "Es necesario ingresar el asunto": "Enter a subject",
+  "Tipo de cursos": "Course Type",
+  "Metodología": "Methodology"
 }

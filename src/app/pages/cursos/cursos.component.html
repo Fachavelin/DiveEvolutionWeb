@@ -1,1 +1,197 @@
-<p>cursos works!</p>
+<div
+  class="h-136 w-full bg-cover bg-center bg-no-repeat flex justify-center items-center"
+  style="
+    background-image: url('https://cdn.pixabay.com/photo/2021/08/25/05/01/boat-6572384_960_720.jpg');
+  "
+>
+  <div class="text-5xl lg:text-7xl text-white" data-aos="fade-down">
+    <p class="text-center">{{ "Cursos de buceo" | translate }}</p>
+  </div>
+</div>
+<!-- <div class="max-w-3xl w-full mx-auto">
+  <div class="grid lg:grid-flow-col gap-3 mx-4 py-4">
+    <button
+      class="{{ selectedButton === 0 ? 'btn-tours-selected' : 'btn-tours' }}"
+      (click)="cambiarButton(0)"
+    >
+      {{ "Tipo de cursos" | translate }}
+    </button>
+    <button
+      class="{{ selectedButton === 1 ? 'btn-tours-selected' : 'btn-tours' }}"
+      (click)="cambiarButton(1)"
+    >
+      {{ "Metodología" | translate }}
+    </button>
+  </div>
+</div> -->
+
+<!-- 3 -->
+<!-- <div
+  class="mt-4 hidden lg:grid lg:grid-cols-3 gap-3 mx-48 absolute lg:-translate-y-80 xl:-translate-y-72"
+>
+  <div
+    *ngFor="let item of data.methodology.methods; let i = index"
+    class="mb-7"
+    data-aos="fade-down"
+  >
+    <div class="">
+      <div
+        class="bg-white rounded-xl border p-6 mb-5  {{
+          selected === i ? 'visible' : 'invisible'
+        }}"
+      >
+        <p class="text-center text-lg font-medium">{{ item!.title }}</p>
+        <p>{{ item!.description }}</p>
+        <p>{{ item!.question1 }}</p>
+        <p>{{ item!.work }}</p>
+        <p>{{ item!.question2 }}</p>
+        <ol class="pl-9">
+          <li class="list-disc" *ngFor="let advantage of item.advantages">
+            {{ advantage }}
+          </li>
+        </ol>
+      </div>
+      <div class="flex justify-center z-50">
+        <img
+          class="w-36 h-36 object-cover rounded hover:cursor-pointer"
+          src="{{ dataImg!.methodsImg[i] }}"
+          alt=""
+          (mouseover)="selected = i"
+          (mouseout)="selected = 3"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="bg-white w-full h-40 hidden lg:block"></div> -->
+
+<!-- *ngIf="selectedButton === 1" -->
+<p class="text-center text-3xl font-bold">
+  {{ "Metodología" | translate }}
+</p>
+
+<div *ngIf="data !== undefined && data !== null">
+  <div class="hidden md:grid grid-cols-3 mt-6 mx-4">
+    <div *ngFor="let item of data!.methodology!.methods; let i = index">
+      <div class="flex relative justify-center z-10">
+        <div
+          class="bottom-24 absolute  pb-16 {{
+            selected === i
+              ? 'visible animate__animated animate__fadeIn animate__faster'
+              : 'invisible'
+          }}"
+          (mouseover)="selected = i"
+          (mouseout)="selected = 3"
+        >
+          <div class="bg-white/95 rounded-xl border p-6">
+            <p class="text-center text-lg font-medium">{{ item!.title }}</p>
+            <p>{{ item!.description }}</p>
+            <p>{{ item!.question1 }}</p>
+            <p>{{ item!.work }}</p>
+            <p>{{ item!.question2 }}</p>
+            <ol class="pl-9">
+              <li class="list-disc" *ngFor="let advantage of item.advantages">
+                {{ advantage }}
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <img
+          *ngIf="dataImg !== undefined && dataImg !== null"
+          class="w-36 h-36 object-cover rounded hover:cursor-pointer"
+          src="{{ dataImg!.methodsImg[i] }}"
+          alt=""
+          (mouseover)="selected = i"
+          (mouseout)="selected = 3"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Mobile -->
+<div *ngIf="data !== undefined && data !== null" class="pt-7 md:hidden">
+  <div
+    *ngFor="let item of data.methodology.methods; let i = index"
+    class="grid mb-7"
+    data-aos="fade-down"
+  >
+    <div
+      class="md:grid md:grid-cols-3 rounded-xl border shadow-2xl shadow-blue-200"
+    >
+      <div class="flex justify-center pt-4">
+        <img
+          *ngIf="dataImg !== undefined && dataImg !== null"
+          class="w-36 h-36 object-cover rounded"
+          src="{{ dataImg!.methodsImg[i] }}"
+          alt=""
+        />
+      </div>
+      <div class="md:col-span-2 pl-4 py-4 pr-7">
+        <p class="text-center text-lg font-medium">{{ item!.title }}</p>
+        <p>{{ item!.description }}</p>
+        <p>{{ item!.question1 }}</p>
+        <p>{{ item!.work }}</p>
+        <p>{{ item!.question2 }}</p>
+        <ol class="pl-9">
+          <li class="list-disc" *ngFor="let advantage of item.advantages">
+            {{ advantage }}
+          </li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- *ngIf="selectedButton === 0" -->
+<p class="text-center text-3xl font-bold pt-10 pb-5">
+  {{ "Tipo de cursos" | translate }}
+</p>
+<div *ngIf="data !== undefined && data !== null" class="grid max-w-5xl mx-auto">
+  <div>
+    <div
+      *ngFor="let item of data!.coursetypes; let i = index"
+      class="grid mb-7"
+      data-aos="fade-down"
+    >
+      <div
+        class="md:grid md:grid-cols-3 rounded-xl border shadow-2xl shadow-blue-200"
+      >
+        <div class="m-4 md:m-0">
+          <img
+            *ngIf="dataImg !== undefined && dataImg !== null"
+            class="w-full h-full object-cover rounded"
+            src="{{ dataImg!.coursesImg[i] }}"
+            alt=""
+          />
+        </div>
+        <div class="md:col-span-2 pl-4 py-4 pr-7">
+          <p class="text-center text-lg font-medium">{{ item!.title }}</p>
+          <p>{{ item!.description }}</p>
+          <ol class="pl-9">
+            <li class="list-disc" *ngFor="let include of item.included">
+              {{ include }}
+            </li>
+          </ol>
+          <p class="text-right text-lg font-bold">${{ item!.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div
+      class="absolute p-4 bg-white rounded-xl border -translate-y-140 md:-translate-y-80 xl:-translate-y-72 2xl:-translate-y-68"
+    >
+      <p class="text-center text-lg font-medium">{{ item!.title }}</p>
+      <p>{{ item!.description }}</p>
+      <p>{{ item!.question1 }}</p>
+      <p>{{ item!.work }}</p>
+      <p>{{ item!.question2 }}</p>
+      <ol class="pl-9">
+        <li class="list-disc" *ngFor="let advantage of item.advantages">
+          {{ advantage }}
+        </li>
+      </ol>
+    </div> -->
