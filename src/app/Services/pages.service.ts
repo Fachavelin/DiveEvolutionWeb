@@ -59,4 +59,40 @@ export class PagesService {
 
     return this.http.get(url);
   }
+
+  cargarDatosToursSc() {
+    const url = `${this._baseUrl}/getTours/${this.lang}/sc`;
+
+    return this.http.get(url);
+  }
+
+  cargarImagenesToursSc() {
+    const url = `${this._baseUrl}/getToursImg`;
+
+    return this.http.get(url);
+  }
+
+  cargarDatosToursSx() {
+    const url = `${this._baseUrl}/getTours/${this.lang}/sx`;
+
+    return this.http.get(url);
+  }
+
+  cargarImagenesToursSx() {
+    const url = `${this._baseUrl}/getToursImg`;
+
+    return this.http.get(url);
+  }
+
+  cargarDatosToursIb() {
+    const url = `${this._baseUrl}/getTours/${this.lang}/ib`;
+
+    return this.http.get(url);
+  }
+
+  cargarImagenesToursIb() {
+    const url = `${this._baseUrl}/getToursImg`;
+
+    return this.http.get(url);
+  }
 }

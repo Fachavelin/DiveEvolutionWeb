@@ -7,6 +7,8 @@
   "Copyright © 2022 Dive Evolution. Desarrollado por": "Copyright © 2022 Dive Evolution. Desarrollado por",
   "Encuentranos en nuestras redes": "Find us on our social media",
   "Tours a San Cristobal": "Tours in San Cristobal",
+  "Tours a Santa Cruz": "Tours in Santa Cruz",
+  "Tours a Isabela": "Tours in Isabela",
   "Tours de esnórquel": "Snorkel Tours",
   "Tours de buceo": "Diving Tours",
   "Tours de tierra": "Land Tours",
@@ -19,5 +21,6 @@
   "Asunto": "Subject",
   "Es necesario ingresar el asunto": "Enter a subject",
   "Tipo de cursos": "Course Type",
-  "Metodología": "Methodology"
+  "Metodología": "Methodology",
+  "Incluye": "It includes"
 }

@@ -84,11 +84,13 @@
               </a>
               <a
                 class="px-3 py-3 text-white text-sm hover:bg-neutral-900 hover:rounded-lg grid"
+                [routerLink]="rutas[5]"
               >
                 {{ "Santa Cruz" }}
               </a>
               <a
                 class="px-3 py-3 text-white text-sm hover:bg-neutral-900 hover:rounded-lg grid"
+                [routerLink]="rutas[6]"
               >
                 {{ "Isabela" }}
               </a>
@@ -127,12 +129,12 @@
         >
         <a
           class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 cursor-pointer"
-          href=""
+          [routerLink]="rutas[5]"
           >{{ "Santa Cruz" }}</a
         >
         <a
           class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 cursor-pointer"
-          href=""
+          [routerLink]="rutas[6]"
           >{{ "Isabela" }}</a
         >
       </div>

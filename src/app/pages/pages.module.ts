@@ -4,10 +4,12 @@ import { InicioComponent } from './inicio/inicio.component';
 import { NosotrosComponent } from './nosotros/nosotros.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { ContactoComponent } from './contacto/contacto.component';
-import { ToursComponent } from './tours/tours.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { SanCristobalComponent } from './san-cristobal/san-cristobal.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ToursComponent } from './tours/tours.component';
+import { SantaCruzComponent } from './santa-cruz/santa-cruz.component';
+import { IsabelaComponent } from './isabela/isabela.component';
 
 @NgModule({
   declarations: [
@@ -15,8 +17,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     NosotrosComponent,
     CursosComponent,
     ContactoComponent,
-    ToursComponent,
+
     SanCristobalComponent,
+     ToursComponent,
+     SantaCruzComponent,
+     IsabelaComponent,
   ],
   exports: [
     InicioComponent,

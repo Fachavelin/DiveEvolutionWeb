@@ -1,20 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tours',
-  template: `
-    <p>
-      tours works!
-    </p>
-  `,
-  styles: [
-  ]
+  templateUrl: './tours.component.html',
+  styles: [],
 })
 export class ToursComponent implements OnInit {
+  @Input() backgroundImg: string = '';
+  @Input() data!: any;
+  @Input() dataImg!: any;
+  @Input() title: string = '';
 
-  constructor() { }
+  public selectedButton: number = 0;
+  constructor() {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  public cambiarButton(num: number): void {
+    this.selectedButton = num;
   }
-
 }

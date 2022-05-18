@@ -14,6 +14,8 @@ export class AppComponent {
     '/san-cristobal',
     '/cursos',
     '/contacto',
+    '/santa-cruz',
+    '/isabela',
   ];
 
   ngOnInit() {

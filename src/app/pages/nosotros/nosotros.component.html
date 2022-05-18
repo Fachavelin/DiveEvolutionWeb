@@ -3,17 +3,28 @@
   <div class="grid lg:grid-cols-3">
     <div
       *ngIf="dataImg !== undefined && dataImg !== null"
-      class="h-96 md:h-136 w-full bg-cover bg-center bg-no-repeat flex items-center"
       style="
-      background-image: url('{{ dataImg!.historyImg!.background }}');
+        background: rgb(130, 247, 229);
+        background: linear-gradient(
+          0deg,
+          rgba(130, 247, 229, 1) 0%,
+          rgba(0, 130, 104, 1) 77%
+        );
       "
     >
-      <p
-        class="text-center text-5xl lg:text-7xl text-white"
-        data-aos="fade-down"
+      <div
+        class="h-96 md:h-136 w-full bg-cover bg-center bg-no-repeat flex items-center"
+        style="
+      background-image: url('{{ dataImg!.historyImg!.background }}');
+      "
       >
-        {{ data!.history!.question }}
-      </p>
+        <p
+          class="text-center text-5xl lg:text-7xl text-white"
+          data-aos="fade-down"
+        >
+          {{ data!.history!.question }}
+        </p>
+      </div>
     </div>
     <div
       class="h-96 md:h-136 w-full text-white flex items-center"

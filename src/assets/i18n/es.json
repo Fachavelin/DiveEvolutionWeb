@@ -7,6 +7,8 @@
   "Copyright © 2022 Dive Evolution. Desarrollado por": "Copyright © 2022 Dive Evolution. Developed by",
   "Encuentranos en nuestras redes": "Encuentranos en nuestras redes",
   "Tours a San Cristobal": "Tours a San Cristobal",
+  "Tours a Santa Cruz": "Tours a Santa Cruz",
+  "Tours a Isabela": "Tours a Isabela",
   "Tours de esnórquel": "Tours de esnórquel",
   "Tours de buceo": "Tours de buceo",
   "Tours de tierra": "Tours de tierra",
@@ -19,5 +21,6 @@
   "Asunto": "Asunto",
   "Es necesario ingresar el asunto": "Es necesario ingresar el asunto",
   "Tipo de cursos": "Tipo de cursos",
-  "Metodología": "Metodología"
+  "Metodología": "Metodología",
+  "Incluye": "Esto incluye"
 }

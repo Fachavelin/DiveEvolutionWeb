@@ -1,0 +1,133 @@
+<!-- todo Img -->
+<div
+  class="h-136 w-full bg-cover bg-center bg-no-repeat flex justify-center items-center"
+  style="
+    background-image: url('{{ backgroundImg }}');
+  "
+>
+  <div class="text-5xl lg:text-7xl text-white" data-aos="fade-down">
+    <p class="text-center">
+      {{ title | translate }}
+    </p>
+  </div>
+</div>
+<div class="w-full bg-gray-100" *ngIf="data !== undefined && data !== null">
+  <!-- todo Botones -->
+  <div class="max-w-5xl w-full mx-auto">
+    <div class="grid lg:grid-flow-col gap-3 mx-4 py-4">
+      <button
+        class="btn-tours"
+        class="{{ selectedButton === 0 ? 'btn-tours-selected' : 'btn-tours' }}"
+        (click)="cambiarButton(0)"
+      >
+        {{ "Tours de esnórquel" | translate }}
+      </button>
+      <button
+        class="btn-tours"
+        class="{{ selectedButton === 1 ? 'btn-tours-selected' : 'btn-tours' }}"
+        (click)="cambiarButton(1)"
+      >
+        {{ "Tours de buceo" | translate }}
+      </button>
+      <button
+        class="btn-tours"
+        class="{{ selectedButton === 2 ? 'btn-tours-selected' : 'btn-tours' }}"
+        (click)="cambiarButton(2)"
+      >
+        {{ "Tours de tierra" | translate }}
+      </button>
+    </div>
+  </div>
+  <!-- Snorkel Tours -->
+  <div class="grid max-w-5xl mx-auto" *ngIf="selectedButton == 0">
+    <div
+      *ngFor="let data of data!.Snorkel; let i = index"
+      class="grid mb-7"
+      data-aos="fade-down"
+    >
+      <div
+        class="md:grid md:grid-cols-3 mx-auto border shadow-2xl shadow-blue-200"
+      >
+        <div class="m-4 md:m-0">
+          <img
+            *ngIf="dataImg !== undefined && dataImg !== null"
+            src="{{ dataImg!.snorkelImg[i] }}"
+            alt=""
+            class="w-full h-full object-cover rounded"
+          />
+        </div>
+        <div class="md:col-span-2 pl-4 py-4 pr-7">
+          <p class="text-center text-lg font-medium">{{ data!.Title }}</p>
+          <p>{{ data!.Description }}</p>
+          <p class="">{{ "Incluye" | translate }}:</p>
+          <ol class="pl-9" *ngFor="let item of data!.Included">
+            <li class="list-disc">{{ item }}</li>
+          </ol>
+          <p class="text-right text-lg font-bold">{{ data!.Price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dive Tours -->
+  <div class="grid max-w-5xl mx-auto" *ngIf="selectedButton == 1">
+    <div
+      *ngFor="let data of data!.Dive; let i = index"
+      class="grid mb-7"
+      data-aos="fade-down"
+    >
+      <div
+        class="md:grid md:grid-cols-3 mx-auto border shadow-2xl shadow-blue-200"
+      >
+        <div class="m-4 md:m-0">
+          <img
+            *ngIf="dataImg !== undefined && dataImg !== null"
+            src="{{ dataImg!.diveImg[i] }}"
+            alt=""
+            class="w-full h-full object-cover rounded"
+          />
+        </div>
+        <div class="md:col-span-2 pl-4 py-4 pr-7">
+          <p class="text-center text-lg font-medium">{{ data!.Title }}</p>
+          <p>{{ data!.Description }}</p>
+          <p class="">{{ "Incluye" | translate }}:</p>
+          <ol class="pl-9" *ngFor="let item of data!.Included">
+            <li class="list-disc">{{ item }}</li>
+          </ol>
+          <p class="text-right text-lg font-bold">{{ data!.Price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Land Tours -->
+  <div class="grid max-w-5xl mx-auto" *ngIf="selectedButton == 2">
+    <div
+      *ngFor="let data of data!.Land; let i = index"
+      class="grid mb-7"
+      data-aos="fade-down"
+    >
+      <div
+        class="md:grid md:grid-cols-3 mx-auto border shadow-2xl shadow-blue-200"
+      >
+        <div class="m-4 md:m-0">
+          <img
+            *ngIf="dataImg !== undefined && dataImg !== null"
+            src="{{ dataImg!.landImg[i] }}"
+            alt=""
+            class="w-full h-full object-cover rounded"
+          />
+        </div>
+        <div class="md:col-span-2 pl-4 py-4 pr-7">
+          <p class="text-center text-lg font-medium">{{ data!.Title }}</p>
+          <p>{{ data!.Description }}</p>
+          <p class="">{{ "Incluye" | translate }}:</p>
+          <ol class="pl-9" *ngFor="let item of data!.Included">
+            <li class="list-disc">{{ item }}</li>
+          </ol>
+          <p class="text-right text-lg font-bold">{{ data!.Price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
