@@ -10,6 +10,8 @@ export class ToursComponent implements OnInit {
   @Input() data!: any;
   @Input() dataImg!: any;
   @Input() title: string = '';
+  @Input() btn: string = 'btn-tours';
+  @Input() btnSelected: string = 'btn-tours-selected';
 
   public selectedButton: number = 0;
   constructor() {}
