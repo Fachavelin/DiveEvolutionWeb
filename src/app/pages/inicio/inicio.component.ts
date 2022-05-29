@@ -17,7 +17,8 @@ export class InicioComponent implements OnInit {
 
   public array: string[] = ['', '', '', ''];
 
-  public backGroundImg: string = '';
+  public backGroundImg: string =
+    'https://res.cloudinary.com/logicielapplab/image/upload/v1651954750/DiveEvolution/IndexBody/shark-g2b72e37ba_1920_gfmze3.jpg';
   public calidadImg: string[] = ['', ''];
   public precioImg: string[] = ['', ''];
   public section2Img!: Section2;
@@ -36,7 +37,7 @@ export class InicioComponent implements OnInit {
     });
 
     this.pages.cargarImagenesIndex().subscribe((datos) => {
-      this.backGroundImg = datos.body_img.backgroud;
+      // this.backGroundImg = datos.body_img.backgroud;
       this.calidadImg = datos.body_img.section1.calidad;
       this.precioImg = datos.body_img.section1.precio;
       this.section2Img = datos?.body_img?.section2;

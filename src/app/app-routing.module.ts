@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ContactoComponent } from './pages/contacto/contacto.component';
+import { CursoComponent } from './pages/curso/curso.component';
 import { CursosComponent } from './pages/cursos/cursos.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { IsabelaComponent } from './pages/isabela/isabela.component';
 import { NosotrosComponent } from './pages/nosotros/nosotros.component';
 import { SanCristobalComponent } from './pages/san-cristobal/san-cristobal.component';
 import { SantaCruzComponent } from './pages/santa-cruz/santa-cruz.component';
+import { TourComponent } from './pages/tour/tour.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'san-cristobal', component: SanCristobalComponent },
   { path: 'santa-cruz', component: SantaCruzComponent },
   { path: 'isabela', component: IsabelaComponent },
+  { path: 'tours/:id', component: TourComponent },
+  { path: 'cursos/:id', component: CursoComponent },
   { path: 'contacto', component: ContactoComponent },
 ];
 

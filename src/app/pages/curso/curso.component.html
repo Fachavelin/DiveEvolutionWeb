@@ -1,0 +1,99 @@
+<div
+  class="h-136 w-full bg-cover bg-top bg-no-repeat flex justify-center items-center"
+  style="
+    background-image: url('https://res.cloudinary.com/logicielapplab/image/upload/v1653797087/DiveEvolution/Hero/lino-thaesler-3MwuQq6v7eU-unsplash_1_s58aan_qxlcuh.jpg');
+  "
+>
+  <div class="text-5xl lg:text-7xl text-white" data-aos="fade-down">
+    <p class="text-center">{{ "Cursos" | translate }}</p>
+  </div>
+</div>
+
+<div
+  class="max-w-6xl mx-auto py-12"
+  *ngIf="data !== null && data !== undefined"
+>
+  <div class="border w-full shadow-2xl shadow-blue-200 mb-6 rounded-3xl">
+    <div class="md:grid md:grid-cols-2">
+      <div class="m-6" data-aos="fade-up">
+        <swiper
+          style="
+            --swiper-navigation-color: #fff;
+            --swiper-pagination-color: #fff;
+          "
+          [loop]="true"
+          [spaceBetween]="10"
+          [navigation]="true"
+          [thumbs]="{ swiper: thumbsSwiper }"
+          [autoplay]="true"
+          class="mySwiper2"
+        >
+          <ng-template swiperSlide *ngFor="let image of dataImg!.img"
+            ><img
+              class="w-full h-auto object-cover object-center rounded-xl"
+              src="{{ image }} "
+          /></ng-template>
+        </swiper>
+        <swiper
+          (swiper)="thumbsSwiper = $event"
+          [loop]="true"
+          [spaceBetween]="10"
+          [slidesPerView]="4"
+          [freeMode]="true"
+          [watchSlidesProgress]="true"
+          class="mySwiper"
+        >
+          <ng-template swiperSlide *ngFor="let image of dataImg!.img"
+            ><img
+              class="w-full h-auto object-cover object-center mt-2 rounded-xl"
+              src="{{ image }} " /></ng-template
+        ></swiper>
+      </div>
+      <div
+        class="bg-indigo-600 rounded-3xl text-white h-full"
+        data-aos="fade-down"
+      >
+        <div class="m-6">
+          <div class="flex pb-2 pt-4 md:pt-0">
+            <p class="text-5xl font-medium">{{ data!.Title }}</p>
+            <p class="ml-12 text-5xl font-semibold">${{ data!.Price }}</p>
+          </div>
+          <p class="py-4 text-lg">{{ data!.Description }}</p>
+          <p class="font-bold text-lg pb-3">{{ "Itinerario" | translate }}:</p>
+          <div class="pb-6">
+            <ol class="pl-4" *ngFor="let item of data!.Itinerary">
+              <li class="text-lg">
+                <i class="fa-solid fa-clipboard-list pr-2"></i>
+                {{ item }}
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="max-w-5xl mx-auto" data-aos="fade-down">
+    <div class="border w-full shadow-2xl shadow-blue-200 rounded-3xl">
+      <div class="grid md:grid-cols-3">
+        <div class="md:col-span-2 m-6">
+          <p class="pt-4 text-lg">{{ data!.LargeDescription }}</p>
+        </div>
+        <div
+          class="bg-black text-white rounded-3xl row-start-1 md:row-auto m-4"
+        >
+          <div class="m-6">
+            <p class="text-2xl text-center font-bold pb-2">
+              {{ "Incluye" | translate }}:
+            </p>
+            <ol class="pl-4" *ngFor="let item of data!.Included">
+              <li class="text-xl">
+                <i class="fa-solid fa-circle-check pr-2"></i>
+                {{ item }}
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

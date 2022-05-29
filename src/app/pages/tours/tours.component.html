@@ -63,8 +63,11 @@
           <ol class="pl-9" *ngFor="let item of data!.Included">
             <li class="list-disc">{{ item }}</li>
           </ol>
+
           <div class="text-center md:text-right">
-            <a class="{{ btn }}">{{ "Ver más" | translate }}</a>
+            <a routerLink="{{ '/tours/' + data!.Ref }}" class="{{ btn }}">{{
+              "Ver más" | translate
+            }}</a>
           </div>
         </div>
       </div>
@@ -100,7 +103,9 @@
             <li class="list-disc">{{ item }}</li>
           </ol>
           <div class="text-center md:text-right">
-            <a class="{{ btn }}">{{ "Ver más" | translate }}</a>
+            <a routerLink="{{ '/tours/' + data!.Ref }}" class="{{ btn }}">{{
+              "Ver más" | translate
+            }}</a>
           </div>
         </div>
       </div>
@@ -136,7 +141,9 @@
             <li class="list-disc">{{ item }}</li>
           </ol>
           <div class="text-center md:text-right">
-            <a class="{{ btn }}">{{ "Ver más" | translate }}</a>
+            <a routerLink="{{ '/tours/' + data!.Ref }}" class="{{ btn }}">{{
+              "Ver más" | translate
+            }}</a>
           </div>
         </div>
       </div>

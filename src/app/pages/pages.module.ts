@@ -10,6 +10,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToursComponent } from './tours/tours.component';
 import { SantaCruzComponent } from './santa-cruz/santa-cruz.component';
 import { IsabelaComponent } from './isabela/isabela.component';
+import { TourComponent } from './tour/tour.component';
+
+import { SwiperModule } from 'swiper/angular';
+import { RouterModule } from '@angular/router';
+import { CursoComponent } from './curso/curso.component';
 
 @NgModule({
   declarations: [
@@ -17,11 +22,12 @@ import { IsabelaComponent } from './isabela/isabela.component';
     NosotrosComponent,
     CursosComponent,
     ContactoComponent,
-
     SanCristobalComponent,
-     ToursComponent,
-     SantaCruzComponent,
-     IsabelaComponent,
+    ToursComponent,
+    TourComponent,
+    SantaCruzComponent,
+    IsabelaComponent,
+    CursoComponent,
   ],
   exports: [
     InicioComponent,
@@ -30,6 +36,12 @@ import { IsabelaComponent } from './isabela/isabela.component';
     ContactoComponent,
     SanCristobalComponent,
   ],
-  imports: [CommonModule, TranslateModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    RouterModule,
+    TranslateModule,
+    ReactiveFormsModule,
+    SwiperModule,
+  ],
 })
 export class PagesModule {}

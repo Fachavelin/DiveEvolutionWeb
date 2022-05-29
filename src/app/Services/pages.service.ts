@@ -48,6 +48,28 @@ export class PagesService {
 
     return this.http.get(url);
   }
+
+  /* = '4f1600d3-2489-4ecf-be4e-928c779f2ed3' */
+  cargarDatosTourPorId(id: string) {
+    const url = `${this._baseUrl}/getToursInfo/${this.lang}/${id}`;
+
+    return this.http.get(url);
+  }
+
+  cargarDatosCursoPorId(id: string = '9e88e4c6-51be-446a-ab54-d09907304593') {
+    const url = `${this._baseUrl}/getCourseInfo/${this.lang}/${id}`;
+
+    return this.http.get(url);
+  }
+
+  cargarImagenesCursoPorId(
+    id: string = '4f1600d3-2489-4ecf-be4e-928c779f2ed3'
+  ) {
+    const url = `${this._baseUrl}/getCourseInfoImg/${id}`;
+
+    return this.http.get(url);
+  }
+
   cargarDatosContacto() {
     const url = `${this._baseUrl}/getContact/${this.lang}`;
 

@@ -7,6 +7,9 @@ import { PagesService } from 'src/app/Services/pages.service';
   styles: [],
 })
 export class CursosComponent implements OnInit {
+  public btn: string = 'btn-tours';
+  public btnSelected: string = 'btn-tours-selected';
+
   public selected: number = 3;
 
   public data!: any;

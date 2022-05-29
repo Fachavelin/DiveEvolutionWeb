@@ -2,7 +2,7 @@
   "inicio": "FRIndex",
   "nosotros": "FRAbout Us",
   "tours": "FRTours",
-  "cursos_de_buceo": "FRDiving Courses",
+  "cursos de buceo": "FRDiving Courses",
   "contacto": "FRContact",
   "Copyright © 2022 Dive Evolution. Desarrollado por": "Copyright © 2022 Dive Evolution. Développé par",
   "Encuentranos en nuestras redes": "Retrouvez-nous sur nos réseaux sociaux",
@@ -22,5 +22,8 @@
   "Es necesario ingresar el asunto": "FREnter a subject",
   "Tipo de cursos": "FRType of courses",
   "Metodología": "FRMethodology",
-  "Incluye": "Il comprend"
+  "Incluye": "Il comprend",
+  "Itinerario": "Itinéraire",
+  "Ver más": "Voir plus",
+  "Cursos": "FR Courses"
 }

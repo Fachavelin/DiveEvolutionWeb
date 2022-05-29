@@ -2,7 +2,7 @@
   "inicio": "Inicio",
   "nosotros": "Nosotros",
   "tours": "Tours",
-  "cursos_de_buceo": "Cursos de buceo",
+  "cursos de buceo": "Cursos de buceo",
   "contacto": "Contacto",
   "Copyright © 2022 Dive Evolution. Desarrollado por": "Copyright © 2022 Dive Evolution. Developed by",
   "Encuentranos en nuestras redes": "Encuentranos en nuestras redes",
@@ -22,5 +22,8 @@
   "Es necesario ingresar el asunto": "Es necesario ingresar el asunto",
   "Tipo de cursos": "Tipo de cursos",
   "Metodología": "Metodología",
-  "Incluye": "Esto incluye"
+  "Incluye": "Esto incluye",
+  "Itinerario": "Itinerario",
+  "Ver más": "Ver más",
+  "Cursos": "Cursos"
 }

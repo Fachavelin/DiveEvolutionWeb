@@ -8,7 +8,7 @@ import { PagesService } from 'src/app/Services/pages.service';
 })
 export class SanCristobalComponent implements OnInit {
   public backgroundImg: string =
-    'https://cdn.pixabay.com/photo/2021/08/25/05/01/boat-6572384_960_720.jpg';
+    'https://res.cloudinary.com/logicielapplab/image/upload/v1653800065/DiveEvolution/Hero/caroline-ebinger-UFQtIKMw7eA-unsplash_1_cueqkf.jpg';
   public data!: any;
   public dataImg!: any;
 

@@ -13,6 +13,7 @@ export class ToursComponent implements OnInit {
   @Input() btn: string = 'btn-tours';
   @Input() btnSelected: string = 'btn-tours-selected';
 
+  public link = '/tours/';
   public selectedButton: number = 0;
   constructor() {}
 
