@@ -5,74 +5,12 @@
   style="background-image: url('{{ backGroundImg }}')"
 >
   <div class="text-white pt-32 text-center" data-aos="fade-down">
-    <p class="text-3xl lg:text-7xl pb-5">{{ title }}</p>
-    <button class="btn-index">{{ button }}</button>
+    <p class="text-3xl lg:text-7xl pb-24">{{ title }}</p>
+    <p class="text-3xl lg:text-5xl pb-5">{{ subtitle }}</p>
+    <p class="text-3xl lg:text-3xl pb-24">{{ little }}</p>
+    <a class="btn-index" routerLink="/nosotros">{{ button }}</a>
   </div>
 </div>
-<!-- Section 1 -->
-<!-- <div
-  *ngIf="calidad.length > 1 && precio.length > 1"
-  class="grid lg:grid-cols-2 gap-6 lg:gap-20 text-white my-4"
->
-  <div class="lg:flex lg:justify-end justify-center">
-    <div class="flex justify-center lg:flex-none lg:justify-start pb-6 lg:pb-0">
-      <img
-        class="lg:absolute h-72 md:h-80 lg:-translate-y-4 lg:-translate-x-64 z-0"
-        src="{{ calidadImg[0] }}"
-        alt=""
-      />
-    </div>
-    <div class="flex justify-center overflow-x-hidden">
-      <div
-        class="bg-black rounded-2xl max-w-xs z-20"
-        data-aos="fade-down-right"
-        data-aos-duration="1000"
-      >
-        <div class="flex justify-center py-7">
-          <img class="h-20" src="{{ calidadImg[1] }}" alt="" />
-        </div>
-
-        <p class="text-center text-2xl font-bold">
-          {{ calidad![0] }}
-        
-        </p>
-        <p class="mx-5 text-lg font-semibold pb-7">
-          {{ calidad[1] }}
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="lg:flex lg:justify-start justify-center">
-    <div class="flex justify-center lg:flex-none lg:justify-start pb-6 lg:pb-0">
-      <img
-        class="lg:absolute h-72 md:h-80 lg:translate-y-4 lg:translate-x-60 z-0"
-        src="{{ precioImg[0] }}"
-        alt=""
-      />
-    </div>
-    <div class="flex justify-center">
-      <div
-        class="bg-blue-700 rounded-2xl max-w-xs z-10"
-        data-aos="fade-up-right"
-        data-aos-easing="linear"
-        data-aos-duration="1000"
-      >
-        <div class="flex justify-center py-7">
-          <img class="h-20" src="{{ precioImg[1] }}" alt="" />
-        </div>
-
-        <p class="text-center text-2xl font-bold">
-          {{ precio![0] }}
-        
-        </p>
-        <p class="mx-5 text-lg font-semibold pb-7">
-          {{ precio![1] }}
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
- -->
 
 <div
   class="md:grid md:grid-cols-2 text-white"
@@ -84,7 +22,7 @@
   >
     <div class="">
       <div
-        class="bg-indigo-600 rounded-2xl max-w-xs z-10 md:mr-8"
+        class="bg-indigo-600 bg-opacity-40 rounded-2xl max-w-xs z-10 md:mr-8"
         data-aos="fade-down"
       >
         <div class="flex justify-center py-7">
@@ -107,7 +45,7 @@
   >
     <div class="">
       <div
-        class="bg-black rounded-2xl max-w-xs z-10 md:ml-8"
+        class="bg-black bg-opacity-50 rounded-2xl max-w-xs z-10 md:ml-8"
         data-aos="fade-down"
       >
         <div class="flex justify-center py-7">
@@ -136,11 +74,13 @@
       <p class="text-center text-4xl lg:text-6xl">
         {{ items[0].title }}
       </p>
-      <p class="text-2xl lg:text-4xl">{{ items[0].description }}</p>
+      <p class="text-2xl lg:text-4xl text-center mx-4 my-4">
+        {{ items[0].description }}
+      </p>
       <div class="text-center pt-3">
-        <button class="btn-index">
+        <a class="btn-index" routerLink="/cursos" target="_blank">
           {{ items[0].button }}
-        </button>
+        </a>
       </div>
     </div>
   </div>
@@ -156,11 +96,17 @@
       <p class="text-center text-4xl lg:text-6xl">
         {{ items[1].title }}
       </p>
-      <p class="text-2xl lg:text-4xl">{{ items[1].description }}</p>
+      <p class="text-2xl lg:text-4xl text-center mx-4 my-4">
+        {{ items[1].description }}
+      </p>
       <div class="text-center pt-3">
-        <button class="btn-index">
+        <a
+          class="btn-index"
+          routerLink="/cursos/9e88e4c6-51be-446a-ab54-d09907304593"
+          target="_blank"
+        >
           {{ items[1].button }}
-        </button>
+        </a>
       </div>
     </div>
   </div>

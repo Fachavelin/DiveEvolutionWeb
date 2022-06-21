@@ -1,6 +1,16 @@
 <div *ngIf="data !== undefined && data !== null">
   <!-- Acerca de mi -->
-  <div class="grid lg:grid-cols-3">
+  <div
+    class="grid lg:grid-cols-3"
+    style="
+      background: rgb(130, 247, 229);
+      background: linear-gradient(
+        0deg,
+        rgba(130, 247, 229, 1) 0%,
+        rgba(0, 130, 104, 1) 77%
+      );
+    "
+  >
     <div
       *ngIf="dataImg !== undefined && dataImg !== null"
       style="
@@ -13,10 +23,10 @@
       "
     >
       <div
-        class="h-96 md:h-136 w-full bg-cover bg-center bg-no-repeat flex items-center"
+        class="h-96 md:h-136 w-full bg-cover bg-center bg-no-repeat flex items-center justify-center"
         style="
-      background-image: url('{{ dataImg!.historyImg!.background }}');
-      "
+          background-image: url('https://res.cloudinary.com/logicielapplab/image/upload/v1654662903/DiveEvolution/Hero/contact_1_cn0ess.png');
+        "
       >
         <p
           class="text-center text-5xl lg:text-7xl text-white"
@@ -26,49 +36,46 @@
         </p>
       </div>
     </div>
-    <div
-      class="h-96 md:h-136 w-full text-white flex items-center"
-      style="
-        background: rgb(130, 247, 229);
-        background: linear-gradient(
-          0deg,
-          rgba(130, 247, 229, 1) 0%,
-          rgba(0, 130, 104, 1) 77%
-        );
-      "
-    >
+    <div class="h-96 md:h-136 w-full text-white flex items-center">
       <div class="mx-6" data-aos="fade-up">
-        <p class="text-center text-2xl pb-4 font-bold">
+        <p class="text-center text-2xl pb-4 font-bold pt-7 md:pt-0">
           {{ data!.history!.introduction }}
         </p>
-        <p class="text-xl font-semibold">{{ data!.history!.brief }}</p>
+        <p class="text-xl text-center font-semibold">
+          {{ data!.history!.brief }}
+        </p>
       </div>
     </div>
     <div
-      class="h-96 md:h-136 w-full bg-cover bg-center bg-no-repeat flex justify-center items-center"
-      style="
-        background: rgb(130, 247, 229);
-        background: linear-gradient(
-          0deg,
-          rgba(130, 247, 229, 1) 0%,
-          rgba(0, 130, 104, 1) 77%
-        );
-      "
+      class="h-96 md:h-136 w-full text-white bg-cover bg-center bg-no-repeat flex items-center"
     >
-      <div>
-        <img
-          *ngIf="dataImg !== undefined && dataImg !== null"
-          class="h-36 mb-12 object-cover"
-          src="{{ dataImg!.historyImg!.logo }}"
-          alt=""
-        />
-        <button
+      <div class="grid mx-auto">
+        <p class="text-center text-xl pb-4 font-bold pt-7 md:pt-0">
+          {{ data!.history!.ask }}
+        </p>
+        <p class="text-center text-lg pb-4 font-bold pt-7 md:pt-0">
+          {{ data!.history!.answer }}
+        </p>
+        <div class="flex justify-center">
+          <a
+            href="https://www.pssworldwide.org/es/default.aspx"
+            target="_blank"
+          >
+            <img
+              *ngIf="dataImg !== undefined && dataImg !== null"
+              class="h-36 mb-12 object-cover"
+              src="{{ dataImg!.historyImg!.logo }}"
+              alt=""
+            />
+          </a>
+        </div>
+      </div>
+      <!-- <button
           data-aos="fade-down"
           class="bg-white text-2xl py-1 px-2 rounded-md hover:bg-black hover:text-white"
         >
           {{ data!.history!.button }}
-        </button>
-      </div>
+        </button> -->
     </div>
   </div>
 
@@ -86,7 +93,7 @@
         </div>
       </div>
       <div class="col-span-2">
-        <div class="flex justify-center items-center">
+        <div class="flex justify-center">
           <p class="text-justify text-xl lg:text-4xl">
             {{ data!.mission!.description }}
           </p>
@@ -115,7 +122,7 @@
         </div>
       </div>
       <div class="col-span-2">
-        <div class="flex justify-center items-center">
+        <div class="flex justify-center">
           <p class="text-justify text-xl lg:text-4xl">
             {{ data!.vission!.description }}
           </p>
@@ -139,7 +146,7 @@
         </div>
       </div>
       <div class="col-span-2">
-        <div class="flex justify-center items-center">
+        <div class="flex justify-center">
           <p class="text-justify text-xl lg:text-4xl">
             {{ data!.value!.description }}
           </p>
@@ -149,51 +156,84 @@
   </div>
   <!--  Values img-->
   <div
-    class="grid sm:grid-cols-2 lg:grid-cols-4 text-xl text-white"
+    class="grid sm:grid-cols-2 lg:grid-cols-5 text-xl text-white bg-black"
     *ngIf="dataImg !== undefined && dataImg !== null"
   >
-    <div
-      class="h-80 w-full bg-cover bg-center bg-no-repeat flex justify-center items-end"
-      style="
+    <div class="h-40 w-full flex justify-center">
+      <div
+        class="h-20 w-20 marker: bg-center bg-no-repeat flex justify-center items-end"
+        style="
     background-image: url('{{ dataImg!.valueImg[0] }}');
-
+    
     "
-      data-aos="fade-down"
-    >
-      <p class="pb-5">{{ data!.value!.values[0] }}</p>
+        data-aos="fade-down"
+      >
+        <p class="pb-5 translate-y-12 font-semibold">
+          {{ data!.value!.values[0] }}
+        </p>
+      </div>
     </div>
-    <div
-      class="h-80 w-full bg-cover bg-center bg-no-repeat flex justify-center items-end"
-      style="
+    <div class="h-40 w-full flex justify-center">
+      <div
+        class="h-20 w-20 bg-center bg-no-repeat flex justify-center items-end"
+        style="
     background-image: url('{{ dataImg!.valueImg[1] }}');
 
     "
-      data-aos="fade-down"
-      data-aos-delay="100"
-    >
-      <p class="pb-5">{{ data!.value!.values[1] }}</p>
+        data-aos="fade-down"
+        data-aos-delay="100"
+      >
+        <p class="pb-5 translate-y-12 font-semibold">
+          {{ data!.value!.values[1] }}
+        </p>
+      </div>
     </div>
-    <div
-      class="h-80 w-full bg-cover bg-center bg-no-repeat flex justify-center items-end"
-      style="
+    <div class="h-40 w-full flex justify-center">
+      <div
+        class="h-20 w-20 bg-center bg-no-repeat flex justify-center items-end"
+        style="
     background-image: url('{{ dataImg!.valueImg[2] }}');
 
     "
-      data-aos="fade-down"
-      data-aos-delay="200"
-    >
-      <p class="pb-5">{{ data!.value!.values[2] }}</p>
+        data-aos="fade-down"
+        data-aos-delay="200"
+      >
+        <p class="pb-5 translate-y-12 font-semibold">
+          {{ data!.value!.values[2] }}
+        </p>
+      </div>
     </div>
-    <div
-      class="h-80 w-full bg-cover bg-center bg-no-repeat flex justify-center items-end"
-      style="
+
+    <div class="h-40 w-full flex justify-center">
+      <div
+        class="h-20 w-20 bg-center bg-no-repeat flex justify-center items-end"
+        style="
       background-image: url('{{ dataImg!.valueImg[3] }}');
 
       "
-      data-aos="fade-down"
-      data-aos-delay="300"
-    >
-      <p class="pb-5">{{ data!.value!.values[3] }}</p>
+        data-aos="fade-down"
+        data-aos-delay="300"
+      >
+        <p class="pb-5 translate-y-12 font-semibold">
+          {{ data!.value!.values[3] }}
+        </p>
+      </div>
+    </div>
+
+    <div class="h-40 w-full flex justify-center">
+      <div
+        class="h-20 w-20 bg-center bg-no-repeat flex justify-center items-end"
+        style="
+      background-image: url('{{ dataImg!.valueImg[4] }}');
+
+      "
+        data-aos="fade-down"
+        data-aos-delay="350"
+      >
+        <p class="pb-5 translate-y-12 font-semibold">
+          {{ data!.value!.values[4] }}
+        </p>
+      </div>
     </div>
   </div>
 </div>

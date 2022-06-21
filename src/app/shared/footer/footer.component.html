@@ -8,11 +8,12 @@
     ></i
   ></a>
 </div>
-<div class="bg-gradient-to-r from-sky-300 via-blue-400 to-sky-300 w-full">
-  <div class="max-w-screen-xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2">
+<!-- bg-gradient-to-r from-sky-300 via-blue-400 to-sky-300 w-full -->
+<div class="relative" style="background-color: rgb(0, 6, 26)">
+  <div class="">
+    <div class="grid grid-cols-1 md:grid-cols-3">
       <div
-        class="py-4 flex justify-center items-center text-white uppercase font-semibold text-base"
+        class="absolute z-50 mx-auto left-0 right-0 md:left-0 md:relative py-4 flex justify-center items-center text-white uppercase font-semibold text-base"
       >
         <img
           *ngIf="imgData !== undefined && imgData !== null"
@@ -39,15 +40,16 @@
           }}</a>
         </div>
       </div>
-      <div class="md:pt-3">
-        <div class="grid">
-          <div class="flex justify-center">
-            <p class="text-white font-semibold text-base text-center">
+      <div
+        class="absolute z-50 mx-auto left-0 right-0 md:left-0 translate-y-48 md:translate-y-0 md:relative md:pt-3 flex justify-center items-center"
+      >
+        <div class="">
+          <div class="">
+            <p class="text-white font-semibold text-lg uppercase text-center">
               {{ "Encuentranos en nuestras redes" | translate }}
             </p>
-          </div>
-          <div class="flex justify-around pt-3 md:pt-1">
-            <!--  <a
+            <div class="flex justify-around pt-3 md:pt-6">
+              <!--  <a
               *ngFor="let item of footer"
               class="z-50 bg-white rounded-full px-4 py-4"
               href=""
@@ -57,36 +59,45 @@
               title=""
               ><i class="fa-lg absolute -translate-x-2 text-indigo-800"></i
             ></a> -->
-            <a
-              *ngIf="socialMedia?.facebook"
-              class="z-50 hover:scale-105 bg-white rounded-full px-1 py-1 fa-xl facebook"
-              href="{{ socialMedia?.facebook }}"
-              target="_blank"
-            >
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a
-              *ngIf="socialMedia?.instagram"
-              class="z-50 hover:scale-105 bg-white rounded-full px-1 py-1 fa-xl instagram"
-              href="{{ socialMedia?.instagram }}"
-              target="_blank"
-            >
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a
-              *ngIf="socialMedia?.twitter"
-              class="z-50 hover:scale-105 bg-white rounded-full px-1 fa-xl py-1 twitter"
-              href="{{ socialMedia?.twitter }}"
-              target="_blank"
-            >
-              <i class="fa-brands fa-twitter"></i>
-            </a>
+              <a
+                *ngIf="socialMedia?.facebook"
+                class="z-50 hover:scale-105 bg-white rounded-full px-1 py-1 fa-xl facebook"
+                href="{{ socialMedia?.facebook }}"
+                target="_blank"
+              >
+                <i class="fa-brands fa-facebook"></i>
+              </a>
+              <a
+                *ngIf="socialMedia?.instagram"
+                class="z-50 hover:scale-105 bg-white rounded-full px-1 py-1 fa-xl instagram"
+                href="{{ socialMedia?.instagram }}"
+                target="_blank"
+              >
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                *ngIf="socialMedia?.twitter"
+                class="z-50 hover:scale-105 bg-white rounded-full px-1 fa-xl py-1 twitter"
+                href="{{ socialMedia?.twitter }}"
+                target="_blank"
+              >
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
+      <div
+        class="h-96 w-full bg-cover bg-center bg-no-repeat flex justify-center items-center"
+        style="
+          background-image: url('https://res.cloudinary.com/logicielapplab/image/upload/v1654662701/DiveEvolution/Hero/footer_ozw9ir.png');
+          opacity: 0.05;
+        "
+        data-aos="zoom-in"
+      ></div>
     </div>
     <div
-      class="flex justify-center text-white text-base pt-4 pb-3 border-t mt-4 md:mt-0 mx-4 text-center"
+      class="flex justify-center text-white text-base pt-4 pb-3 border-t mx-4 text-center"
     >
       <p>
         {{ "Copyright © 2022 Dive Evolution. Desarrollado por" | translate }}

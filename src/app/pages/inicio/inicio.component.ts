@@ -13,6 +13,8 @@ export class InicioComponent implements OnInit {
   public section2!: Section2;
   public items!: Item[];
   public title!: string;
+  public subtitle!: string;
+  public little!: string;
   public button!: string;
 
   public array: string[] = ['', '', '', ''];
@@ -33,6 +35,8 @@ export class InicioComponent implements OnInit {
       this.section2 = datos?.body?.section2;
       this.items = datos.body.section2.items;
       this.title = datos.body.title;
+      this.subtitle = datos.body.subtitle;
+      this.little = datos.body.little;
       this.button = datos.body.button;
     });
 

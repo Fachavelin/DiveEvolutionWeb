@@ -8,6 +8,8 @@ export interface Body {
   section1: Section1;
   section2: Section2;
   title: string;
+  subtitle: string;
+  little: string;
 }
 
 export interface Section1 {
