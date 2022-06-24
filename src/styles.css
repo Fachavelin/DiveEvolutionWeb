@@ -7,7 +7,7 @@
 }
 
 .navbarItemResponsive {
-  @apply py-3 text-center font-semibold text-base hover:text-white hover:bg-blue-500 rounded-md cursor-pointer;
+  @apply py-3 text-center font-semibold text-base hover:text-white hover:bg-black rounded-md cursor-pointer;
 }
 .btn-index {
   @apply bg-black px-2 py-1 hover:bg-gray-900 cursor-pointer rounded-xl text-xl;

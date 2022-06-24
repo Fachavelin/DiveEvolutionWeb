@@ -9,7 +9,7 @@
         <p class="ml-1">Dive Evolution</p>
         <!-- Botton celular -->
         <button
-          class="lg:hidden right-10 absolute border-2 bg-blue-500 py-2 px-4 rounded hover:bg-blue-400"
+          class="lg:hidden right-10 absolute border-2 bg-black py-2 px-4 rounded hover:bg-white hover:text-black"
           (click)="abrir()"
         >
           <i class="{{ icono[indice] }}"></i>
@@ -108,7 +108,7 @@
 
     <!-- Menu responsivo -->
     <div
-      class="grid bg-white lg:hidden border-t border-b border-blue-400 z-50"
+      class="grid bg-white lg:hidden border-t border-b z-50"
       *ngIf="indice == 1"
       data-aos="fade-down"
     >
@@ -123,17 +123,17 @@
       </button>
       <div class="grid bg-black text-white" *ngIf="abiertoTours">
         <a
-          class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 cursor-pointer"
+          class="py-3 text-center font-semibold text-base hover:bg-white hover:text-black cursor-pointer"
           [routerLink]="rutas[2]"
           >{{ "San Cristobal" }}</a
         >
         <a
-          class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 cursor-pointer"
+          class="py-3 text-center font-semibold text-base hover:bg-white hover:text-black cursor-pointer"
           [routerLink]="rutas[5]"
           >{{ "Santa Cruz" }}</a
         >
         <a
-          class="py-3 text-center font-semibold text-base hover:text-white hover:bg-neutral-900 cursor-pointer"
+          class="py-3 text-center font-semibold text-base hover:bg-white hover:text-black cursor-pointer"
           [routerLink]="rutas[6]"
           >{{ "Isabela" }}</a
         >
