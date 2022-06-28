@@ -4,6 +4,8 @@ import { SocialMedia } from 'src/app/interfaces/footer';
 import { PagesService } from 'src/app/Services/pages.service';
 import { SharedService } from 'src/app/Services/shared.service';
 
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
@@ -14,6 +16,8 @@ export class ContactoComponent implements OnInit {
   public contactoImg!: any;
   public phone!: string;
   public socialMedia!: SocialMedia;
+
+  public enviado: boolean = false;
 
   contactoForm = this.fb.group({
     nombre: ['', Validators.required],
@@ -42,10 +46,41 @@ export class ContactoComponent implements OnInit {
     });
   }
 
-  validarCampo(campo: string) {
+  validarCampo(campo: string): boolean | null {
     return (
       this.contactoForm.controls[campo].errors &&
       this.contactoForm.controls[campo].touched
     );
+  }
+
+  mostrarCapcha() {
+    if (!this.contactoForm.valid) {
+      return;
+    }
+
+    Swal.fire({
+      title: 'Por favor confirmanos que eres humano antes de seguir',
+      html: '<div id="recaptcha" style="margin-left: 4rem; margin-right: auto;"></div>',
+      didOpen: () => {
+        grecaptcha.render('recaptcha', {
+          sitekey: '6LfdiGgeAAAAAInv3oZS5IF71_mn0vWAb8b79C5c',
+        });
+      },
+      preConfirm: function () {
+        if (grecaptcha.getResponse().length === 0) {
+          Swal.showValidationMessage(`Por favor completa el campo`);
+        }
+      },
+    }).then(() => {
+      if (grecaptcha.getResponse().length > 0) {
+        this.enviarEmail();
+      }
+    });
+  }
+
+  enviarEmail(): void {
+    if (!this.contactoForm.valid) {
+      return;
+    }
   }
 }
