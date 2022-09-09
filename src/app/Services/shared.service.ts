@@ -7,7 +7,7 @@ import { Header } from '../interfaces/navbar';
   providedIn: 'root',
 })
 export class SharedService {
-  private _baseUrl = 'https://diveevolution-backend.herokuapp.com/api';
+  private _baseUrl = 'https://diveevolution-backend.herokuapp.com';
   private lang;
 
   constructor(private http: HttpClient) {
@@ -21,19 +21,19 @@ export class SharedService {
   } */
 
   cargarImagenesNavbar() {
-    const url = `${this._baseUrl}/getHeaderImg`;
+    const url = `${this._baseUrl}/api/getHeaderImg`;
 
     return this.http.get(url);
   }
 
   cargarDatosFooter() {
-    const url = `${this._baseUrl}/getFooter/${this.lang}`;
+    const url = `${this._baseUrl}/api/getFooter/${this.lang}`;
 
     return this.http.get<Footer>(url);
   }
 
   cargarImagenesFooter() {
-    const url = `${this._baseUrl}/getFooterImg`;
+    const url = `${this._baseUrl}/api/getFooterImg`;
 
     return this.http.get(url);
   }

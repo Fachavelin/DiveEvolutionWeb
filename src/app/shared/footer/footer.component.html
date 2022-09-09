@@ -23,21 +23,62 @@
         />
         <div class="grid">
           <!-- <p class="ml-1">Dive Evolution</p> -->
-          <a class="hover:scale-105 cursor-pointer" [routerLink]="rutas[0]">{{
-            "inicio" | translate
-          }}</a>
-          <a class="hover:scale-105 cursor-pointer" [routerLink]="rutas[1]">{{
-            "nosotros" | translate
-          }}</a>
-          <a class="hover:scale-105 cursor-pointer" [routerLink]="rutas[2]">{{
-            "tours" | translate
-          }}</a>
-          <a class="hover:scale-105 cursor-pointer" [routerLink]="rutas[3]">{{
-            "cursos de buceo" | translate
-          }}</a>
-          <a class="hover:scale-105 cursor-pointer" [routerLink]="rutas[4]">{{
-            "contacto" | translate
-          }}</a>
+          <a
+            class="hover:scale-105 cursor-pointer flex justify-between items-center"
+            [routerLink]="rutas[0]"
+            routerLinkActive
+            #rla="routerLinkActive"
+            [routerLinkActiveOptions]="{ exact: true }"
+          >
+            <p>
+              {{ "inicio" | translate }}
+            </p>
+            <img *ngIf="rla.isActive" src="{{ dive }}" class="w-9" alt="" />
+          </a>
+          <a
+            class="hover:scale-105 cursor-pointer flex justify-between items-center"
+            [routerLink]="rutas[1]"
+            routerLinkActive
+            #rla1="routerLinkActive"
+          >
+            <p>
+              {{ "nosotros" | translate }}
+            </p>
+            <img *ngIf="rla1.isActive" src="{{ dive }}" class="w-9" alt=""
+          /></a>
+          <a
+            class="hover:scale-105 cursor-pointer flex justify-between items-center"
+            [routerLink]="rutas[2]"
+            routerLinkActive
+            #rla2="routerLinkActive"
+          >
+            <p>
+              {{ "tours" | translate }}
+            </p>
+            <img *ngIf="rla2.isActive" src="{{ dive }}" class="w-9" alt=""
+          /></a>
+          <a
+            class="hover:scale-105 cursor-pointer flex justify-between items-center"
+            [routerLink]="rutas[3]"
+            routerLinkActive
+            #rla3="routerLinkActive"
+          >
+            <p>
+              {{ "cursos de buceo" | translate }}
+            </p>
+            <img *ngIf="rla3.isActive" src="{{ dive }}" class="w-9" alt=""
+          /></a>
+          <a
+            class="hover:scale-105 cursor-pointer flex justify-between items-center"
+            [routerLink]="rutas[4]"
+            routerLinkActive
+            #rla4="routerLinkActive"
+          >
+            <p>
+              {{ "contacto" | translate }}
+            </p>
+            <img *ngIf="rla4.isActive" src="{{ dive }}" class="w-9" alt=""
+          /></a>
         </div>
       </div>
       <div
@@ -93,7 +134,6 @@
           background-image: url('https://res.cloudinary.com/logicielapplab/image/upload/v1654662701/DiveEvolution/Hero/footer_ozw9ir.png');
           opacity: 0.05;
         "
-        data-aos="zoom-in"
       ></div>
     </div>
     <div

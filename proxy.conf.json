@@ -1,8 +1,0 @@
-{
-  "/api": {
-    "target": "https://dive-evolution.herokuapp.com",
-    "secure": true,
-    "logLevel": "debug",
-    "changeOrigin": true
-  }
-}

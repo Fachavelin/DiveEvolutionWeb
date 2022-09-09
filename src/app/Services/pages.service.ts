@@ -1,63 +1,71 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ImgBody, Index } from '../interfaces';
+import { HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PagesService {
-  private _baseUrl = 'https://diveevolution-backend.herokuapp.com/api';
+  private _baseUrl = 'https://diveevolution-backend.herokuapp.com';
   private lang;
+
+  private httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    }),
+  };
 
   constructor(private http: HttpClient) {
     this.lang = localStorage.getItem('language') || 'es';
   }
 
   cargarDatosIndex() {
-    const url = `${this._baseUrl}/getIndex/${this.lang}`;
+    const url = `${this._baseUrl}/api/getIndex/${this.lang}`;
 
     return this.http.get<Index>(url);
   }
 
   cargarImagenesIndex() {
-    const url = `${this._baseUrl}/getIndexImg`;
+    const url = `${this._baseUrl}/api/getIndexImg`;
 
     return this.http.get<ImgBody>(url);
   }
 
   cargarDatosNosotros() {
-    const url = `${this._baseUrl}/getAbout/${this.lang}`;
+    const url = `${this._baseUrl}/api/getAbout/${this.lang}`;
 
     return this.http.get(url);
   }
 
   cargarImagenesNosotros() {
-    const url = `${this._baseUrl}/getAboutImg`;
+    const url = `${this._baseUrl}/api/getAboutImg`;
 
     return this.http.get(url);
   }
 
   cargarDatosCursos() {
-    const url = `${this._baseUrl}/getCourses/${this.lang}`;
+    const url = `${this._baseUrl}/api/getCourses/${this.lang}`;
 
     return this.http.get(url);
   }
 
   cargarImagenesCursos() {
-    const url = `${this._baseUrl}/getCoursesImg`;
+    const url = `${this._baseUrl}/api/getCoursesImg`;
 
     return this.http.get(url);
   }
 
   /* = '4f1600d3-2489-4ecf-be4e-928c779f2ed3' */
   cargarDatosTourPorId(id: string) {
-    const url = `${this._baseUrl}/getToursInfo/${this.lang}/${id}`;
+    const url = `${this._baseUrl}/api/getToursInfo/${this.lang}/${id}`;
 
     return this.http.get(url);
   }
 
   cargarDatosCursoPorId(id: string = '9e88e4c6-51be-446a-ab54-d09907304593') {
-    const url = `${this._baseUrl}/getCourseInfo/${this.lang}/${id}`;
+    const url = `${this._baseUrl}/api/getCourseInfo/${this.lang}/${id}`;
 
     return this.http.get(url);
   }
@@ -65,56 +73,65 @@ export class PagesService {
   cargarImagenesCursoPorId(
     id: string = '4f1600d3-2489-4ecf-be4e-928c779f2ed3'
   ) {
-    const url = `${this._baseUrl}/getCourseInfoImg/${id}`;
+    const url = `${this._baseUrl}/api/getCourseInfoImg/${id}`;
 
     return this.http.get(url);
   }
 
   cargarDatosContacto() {
-    const url = `${this._baseUrl}/getContact/${this.lang}`;
+    const url = `${this._baseUrl}/api/getContact/${this.lang}`;
 
     return this.http.get(url);
   }
 
   cargarImagenesContacto() {
-    const url = `${this._baseUrl}/getContactImg`;
+    const url = `${this._baseUrl}/api/getContactImg`;
 
     return this.http.get(url);
   }
 
   cargarDatosToursSc() {
-    const url = `${this._baseUrl}/getTours/${this.lang}/sc`;
+    const url = `${this._baseUrl}/api/getTours/${this.lang}/sc`;
 
     return this.http.get(url);
   }
 
   cargarImagenesToursSc() {
-    const url = `${this._baseUrl}/getToursImg`;
+    const url = `${this._baseUrl}/api/getToursImg`;
 
     return this.http.get(url);
   }
 
   cargarDatosToursSx() {
-    const url = `${this._baseUrl}/getTours/${this.lang}/sx`;
+    const url = `${this._baseUrl}/api/getTours/${this.lang}/sx`;
 
     return this.http.get(url);
   }
 
   cargarImagenesToursSx() {
-    const url = `${this._baseUrl}/getToursImg`;
+    const url = `${this._baseUrl}/api/getToursImg`;
 
     return this.http.get(url);
   }
 
   cargarDatosToursIb() {
-    const url = `${this._baseUrl}/getTours/${this.lang}/ib`;
+    const url = `${this._baseUrl}/api/getTours/${this.lang}/ib`;
 
     return this.http.get(url);
   }
 
   cargarImagenesToursIb() {
-    const url = `${this._baseUrl}/getToursImg`;
+    const url = `${this._baseUrl}/api/getToursImg`;
 
     return this.http.get(url);
+  }
+
+  enviarEmail(phone: string, email: string, message: string, name: string) {
+    const url = `${this._baseUrl}/api/sendMail`;
+    const body = { phone, email, message, name };
+
+    console.log(body);
+
+    return this.http.post<any>(url, body, this.httpOptions);
   }
 }

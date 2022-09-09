@@ -53,7 +53,7 @@ export class ContactoComponent implements OnInit {
     );
   }
 
-  mostrarCapcha() {
+  /* mostrarCapcha() {
     if (!this.contactoForm.valid) {
       return;
     }
@@ -77,10 +77,16 @@ export class ContactoComponent implements OnInit {
       }
     });
   }
-
+ */
   enviarEmail(): void {
     if (!this.contactoForm.valid) {
       return;
     }
+    const { nombre, email, telefono, asunto } = this.contactoForm.value;
+    this.pages
+      .enviarEmail(telefono, email, asunto, nombre)
+      .subscribe((resp) => {
+        console.log(resp);
+      });
   }
 }
