@@ -75,7 +75,10 @@
 
           <span class="rounded-lg">
             <i class="{{ iconoTour[indiceTour] }}"></i>
-            <div *ngIf="abiertoTours" class="absolute mt-1 rounded-lg bg-black">
+            <div
+              class="absolute mt-1 rounded-lg bg-black duration-700"
+              [ngClass]="!abiertoTours ? 'scale-0 hidden' : ''"
+            >
               <a
                 class="px-3 py-3 text-white text-sm hover:bg-neutral-900 hover:rounded-lg grid"
                 [routerLink]="rutas[2]"
@@ -121,7 +124,10 @@
       <button class="navbarItemResponsive" (click)="abrirTours()">
         {{ "tours" | translate }} <i class="{{ iconoTour[indiceTour] }}"></i>
       </button>
-      <div class="grid bg-black text-white" *ngIf="abiertoTours">
+      <div
+        class="grid bg-black text-white duration-700"
+        [ngClass]="!abiertoTours ? 'scale-0 hidden' : ''"
+      >
         <a
           class="py-3 text-center font-semibold text-base hover:bg-white hover:text-black cursor-pointer"
           [routerLink]="rutas[2]"

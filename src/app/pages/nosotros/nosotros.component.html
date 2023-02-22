@@ -79,8 +79,13 @@
     </div>
   </div>
 
-  <!--  Mision -->
-  <div class="w-full h-128 bg-white text-indigo-800 flex items-center">
+  <!--*  Mision -->
+  <div
+    class="h-136 w-full bg-cover bg-center bg-no-repeat flex items-center text-white"
+    style="
+  background-image: url('{{ dataImg!.missionImg }}');
+  "
+  >
     <div
       class="lg:grid lg:grid-cols-3 mx-8 lg:mx-20 2xl:mx-32"
       data-aos="fade-right"
@@ -102,7 +107,7 @@
     </div>
   </div>
 
-  <!-- Vision -->
+  <!--* Vision -->
   <div
     *ngIf="dataImg !== undefined && dataImg !== null"
     class="h-136 w-full bg-cover bg-center bg-no-repeat flex items-center text-white"

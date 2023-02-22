@@ -7,7 +7,7 @@ import { Header } from '../interfaces/navbar';
   providedIn: 'root',
 })
 export class SharedService {
-  private _baseUrl = 'https://diveevolution-backend.herokuapp.com';
+  private _baseUrl = 'https://diveevolutiongpsbackend.uc.r.appspot.com';
   private lang;
 
   constructor(private http: HttpClient) {

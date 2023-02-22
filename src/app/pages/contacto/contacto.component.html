@@ -174,9 +174,11 @@
           <button
             type="submit"
             (click)="enviarEmail()"
+            [disabled]="cargando"
             class="bg-white w-full md:w-auto text-black hover:bg-black hover:text-white hover:bg-opacity-50 text-lg font-semibold rounded-lg py-2 px-4 text-center"
           >
-            {{ "Enviar" | translate }}
+            {{ cargando ? "" : ("Enviar" | translate) }}
+            <i *ngIf="cargando" class="fa-solid fa-spinner animate-spin"></i>
           </button>
         </div>
       </div>
@@ -193,7 +195,7 @@
       loading="lazy"
       allowfullscreen
       referrerpolicy="no-referrer-when-downgrade"
-      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCRgYXprHI6ZYg9t4MsEsXH4liJphpD_ZI
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAZaiVYZgI1rdT44_eVyJkDDe7cxymPCls
     &q=-0.9015997,-89.6108186"
     >
     </iframe>

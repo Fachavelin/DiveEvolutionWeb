@@ -7,7 +7,7 @@ import { HttpHeaders } from '@angular/common/http';
   providedIn: 'root',
 })
 export class PagesService {
-  private _baseUrl = 'https://diveevolution-backend.herokuapp.com';
+  private _baseUrl = 'https://diveevolutiongpsbackend.uc.r.appspot.com';
   private lang;
 
   private httpOptions = {
@@ -129,8 +129,6 @@ export class PagesService {
   enviarEmail(phone: string, email: string, message: string, name: string) {
     const url = `${this._baseUrl}/api/sendMail`;
     const body = { phone, email, message, name };
-
-    console.log(body);
 
     return this.http.post<any>(url, body, this.httpOptions);
   }

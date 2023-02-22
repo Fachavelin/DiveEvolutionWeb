@@ -9,7 +9,13 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-contacto',
   templateUrl: './contacto.component.html',
-  styles: [],
+  styles: [
+    `
+      .footer {
+        background-color: red;
+      }
+    `,
+  ],
 })
 export class ContactoComponent implements OnInit {
   public datosContacto!: any;
@@ -17,7 +23,7 @@ export class ContactoComponent implements OnInit {
   public phone!: string;
   public socialMedia!: SocialMedia;
 
-  public enviado: boolean = false;
+  public cargando: boolean = false;
 
   contactoForm = this.fb.group({
     nombre: ['', Validators.required],
@@ -82,11 +88,16 @@ export class ContactoComponent implements OnInit {
     if (!this.contactoForm.valid) {
       return;
     }
+    this.cargando = true;
     const { nombre, email, telefono, asunto } = this.contactoForm.value;
     this.pages
       .enviarEmail(telefono, email, asunto, nombre)
       .subscribe((resp) => {
-        console.log(resp);
+        Swal.fire({
+          icon: 'success',
+          text: `${resp.success}`,
+        });
+        this.cargando = false;
       });
   }
 }
