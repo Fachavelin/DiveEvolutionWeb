@@ -30,10 +30,10 @@
           [autoplay]="true"
           class="mySwiper2"
         >
-          <ng-template swiperSlide
+          <ng-template swiperSlide *ngFor="let image of dataImg!.img"
             ><img
               class="w-full h-auto object-cover object-center rounded-xl"
-              src="https://res.cloudinary.com/logicielapplab/image/upload/v1652031292/DiveEvolution/About/sea-g3cb441ce3_1920_i0pxzq.jpg "
+              src="{{ image }}"
           /></ng-template>
         </swiper>
         <swiper
@@ -45,11 +45,13 @@
           [watchSlidesProgress]="true"
           class="mySwiper"
         >
-          <ng-template swiperSlide
+          <ng-template swiperSlide *ngFor="let image of dataImg!.img"
             ><img
               class="w-full h-auto object-cover object-center mt-2 rounded-xl"
-              src="https://res.cloudinary.com/logicielapplab/image/upload/v1652031292/DiveEvolution/About/sea-g3cb441ce3_1920_i0pxzq.jpg " /></ng-template
-        ></swiper>
+              src="{{ image }}"
+            />
+          </ng-template>
+        </swiper>
       </div>
       <div
         class="bg-indigo-600 rounded-3xl text-white h-full"

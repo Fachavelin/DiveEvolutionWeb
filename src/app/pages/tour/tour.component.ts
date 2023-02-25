@@ -6,10 +6,7 @@ import { PagesService } from 'src/app/Services/pages.service';
 
 import { SwiperComponent } from 'swiper/angular';
 
-// import Swiper core and required modules
 import SwiperCore, { FreeMode, Navigation, Thumbs, Autoplay } from 'swiper';
-
-// install Swiper modules
 SwiperCore.use([FreeMode, Navigation, Thumbs, Autoplay]);
 
 @Component({
@@ -20,7 +17,7 @@ SwiperCore.use([FreeMode, Navigation, Thumbs, Autoplay]);
 export class TourComponent implements OnInit {
   public thumbsSwiper: any;
   public data!: any;
-  public dataImg: string[] = ['', '', '', '', ''];
+  public dataImg!: any;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -32,6 +29,12 @@ export class TourComponent implements OnInit {
       .pipe(switchMap(({ id }) => this.ps.cargarDatosTourPorId(id)))
       .subscribe((data) => {
         this.data = data;
+        console.log(this.data);
+      });
+    this.activatedRoute.params
+      .pipe(switchMap(({ id }) => this.ps.cargarImagenesTourPorId(id)))
+      .subscribe((data) => {
+        this.dataImg = data;
         console.log(this.data);
       });
   }

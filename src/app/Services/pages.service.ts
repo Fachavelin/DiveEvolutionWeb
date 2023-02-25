@@ -64,6 +64,12 @@ export class PagesService {
     return this.http.get(url);
   }
 
+  cargarImagenesTourPorId(id: string) {
+    const url = `${this._baseUrl}/api/getToursInfoImg/${id}`;
+
+    return this.http.get(url);
+  }
+
   cargarDatosCursoPorId(id: string = '9e88e4c6-51be-446a-ab54-d09907304593') {
     const url = `${this._baseUrl}/api/getCourseInfo/${this.lang}/${id}`;
 
