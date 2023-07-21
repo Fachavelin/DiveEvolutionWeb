@@ -38,7 +38,7 @@
   <!-- Snorkel Tours -->
   <div class="grid max-w-5xl mx-auto" *ngIf="selectedButton == 0">
     <div
-      *ngFor="let data of data!.Snorkel; let i = index"
+      *ngFor="let data of data!.snorkel; let i = index"
       class="grid mb-7"
       data-aos="fade-down"
     >
@@ -56,14 +56,14 @@
             <p class="text-center text-lg font-medium">{{ data!.title }}</p>
             <p class="text-right text-lg font-bold">${{ data!.price }}</p>
           </div>
-          <p>{{ data!.Description }}</p>
+          <p>{{ data!.description }}</p>
           <p class="">{{ "Incluye" | translate }}:</p>
           <ol class="pl-9" *ngFor="let item of data!.included">
             <li class="list-disc">{{ item }}</li>
           </ol>
 
           <div class="text-center md:text-right">
-            <a routerLink="{{ '/tours/' + data!.Ref }}" class="{{ btn }}">{{
+            <a routerLink="{{ '/tours/' + data!.ref }}" class="{{ btn }}">{{
               "Ver más" | translate
             }}</a>
           </div>
@@ -75,7 +75,7 @@
   <!-- Dive Tours -->
   <div class="grid max-w-5xl mx-auto" *ngIf="selectedButton == 1">
     <div
-      *ngFor="let data of data!.Dive; let i = index"
+      *ngFor="let data of data!.dive; let i = index"
       class="grid mb-7"
       data-aos="fade-down"
     >
@@ -93,7 +93,7 @@
             <p class="text-center text-lg font-medium">{{ data!.title }}</p>
             <p class="text-right text-lg font-bold">${{ data!.price }}</p>
           </div>
-          <p>{{ data!.Description }}</p>
+          <p>{{ data!.description }}</p>
           <p class="">{{ "Incluye" | translate }}:</p>
           <ol class="pl-9" *ngFor="let item of data!.included">
             <li class="list-disc">{{ item }}</li>
@@ -129,13 +129,13 @@
             <p class="text-center text-lg font-medium">{{ data!.title }}</p>
             <p class="text-right text-lg font-bold">${{ data!.price }}</p>
           </div>
-          <p>{{ data!.Description }}</p>
+          <p>{{ data!.description }}</p>
           <p class="">{{ "Incluye" | translate }}:</p>
           <ol class="pl-9" *ngFor="let item of data!.included">
             <li class="list-disc">{{ item }}</li>
           </ol>
           <div class="text-center md:text-right">
-            <a routerLink="{{ '/tours/' + data!.Ref }}" class="{{ btn }}">{{
+            <a routerLink="{{ '/tours/' + data!.ref }}" class="{{ btn }}">{{
               "Ver más" | translate
             }}</a>
           </div>
