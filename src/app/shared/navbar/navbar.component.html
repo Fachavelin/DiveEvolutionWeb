@@ -77,9 +77,9 @@
             </div>
           </span>
         </button>
-        <!-- <a class="navbarItem" [routerLink]="rutas[3]">{{
+        <a class="navbarItem" [routerLink]="rutas[3]">{{
           "cursos de buceo" | translate
-        }}</a> -->
+        }}</a>
         <a class="navbarItem" [routerLink]="rutas[4]">{{
           "contacto" | translate
         }}</a>
@@ -128,9 +128,11 @@
           >{{ "Isabela" }}</a
         > -->
       </div>
-      <!-- <a class="py-3 text-center font-semibold text-base hover:text-white hover:bg-black rounded-md cursor-pointer" [routerLink]="rutas[3]">{{
-        "cursos de buceo" | translate
-      }}</a> -->
+      <a
+        class="py-3 text-center font-semibold text-base hover:text-white hover:bg-black rounded-md cursor-pointer"
+        [routerLink]="rutas[3]"
+        >{{ "cursos de buceo" | translate }}</a
+      >
       <a
         class="py-3 text-center font-semibold text-base hover:text-white hover:bg-black rounded-md cursor-pointer"
         [routerLink]="rutas[4]"
