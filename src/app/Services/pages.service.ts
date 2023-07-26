@@ -8,6 +8,8 @@ import { HttpHeaders } from '@angular/common/http';
 })
 export class PagesService {
   private _baseUrl = 'https://diveevolutiongpsbackend.uc.r.appspot.com';
+  private _mailBaseUrl =
+    'https://mailservicebackend.uc.r.appspot.com/api/standardMail';
   private lang;
 
   private httpOptions = {
@@ -133,8 +135,15 @@ export class PagesService {
   }
 
   enviarEmail(phone: string, email: string, message: string, name: string) {
-    const url = `${this._baseUrl}/api/sendMail`;
-    const body = { phone, email, message, name };
+    const url = `${this._mailBaseUrl}/api/sendMail`;
+    const clientName = 'Jhonatan Quihuiri';
+    const body = {
+      phone,
+      email,
+      message,
+      name,
+      clientName,
+    };
 
     return this.http.post<any>(url, body, this.httpOptions);
   }
