@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { SocialMedia } from 'src/app/interfaces/footer';
 import { PagesService } from 'src/app/Services/pages.service';
 import { SharedService } from 'src/app/Services/shared.service';
@@ -28,7 +28,10 @@ export class ContactoComponent implements OnInit {
   contactoForm = this.fb.group({
     nombre: ['', Validators.required],
     email: ['', [Validators.required, Validators.email]],
-    telefono: ['', [Validators.required, Validators.minLength(9)]],
+    telefono: [
+      '',
+      [Validators.required, Validators.minLength(9), this.phoneNumberValidator],
+    ],
     asunto: ['', [Validators.required]],
   });
 
@@ -57,6 +60,24 @@ export class ContactoComponent implements OnInit {
       this.contactoForm.controls[campo].errors &&
       this.contactoForm.controls[campo].touched
     );
+  }
+
+  phoneNumberValidator(
+    control: AbstractControl
+  ): { [key: string]: any } | null {
+    const phoneNumber = control.value;
+    if (phoneNumber && phoneNumber !== '' && !/^\d+$/.test(phoneNumber)) {
+      // If the phone number contains non-numeric characters, return an error
+      return { numeric: true };
+    }
+
+    if (phoneNumber && phoneNumber.length < 9) {
+      // If the phone number's length is less than 9, return an error
+      return { minlength: true };
+    }
+
+    // If the phone number is valid, return null
+    return null;
   }
 
   /* mostrarCapcha() {

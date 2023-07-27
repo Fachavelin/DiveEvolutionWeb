@@ -135,7 +135,7 @@ export class PagesService {
   }
 
   enviarEmail(phone: string, email: string, message: string, name: string) {
-    const url = `${this._mailBaseUrl}/api/sendMail`;
+    const url = `${this._mailBaseUrl}`;
     const clientName = 'Jhonatan Quihuiri';
     const body = {
       phone,

@@ -59,13 +59,13 @@
       >
         <div class="m-6">
           <div class="flex pb-2 pt-4 md:pt-0">
-            <p class="text-5xl font-medium">{{ data!.Title }}</p>
-            <p class="ml-12 text-5xl font-semibold">${{ data!.Price }}</p>
+            <p class="text-5xl font-medium">{{ data!.title }}</p>
+            <p class="ml-12 text-5xl font-semibold">${{ data!.price }}</p>
           </div>
-          <p class="py-4 text-lg">{{ data!.Description }}</p>
+          <p class="py-4 text-lg">{{ data!.description }}</p>
           <p class="font-bold text-lg pb-3">{{ "Itinerario" | translate }}:</p>
           <div class="pb-6">
-            <ol class="pl-4" *ngFor="let item of data!.Itinerary">
+            <ol class="pl-4" *ngFor="let item of data!.itinerary">
               <li class="text-lg">
                 <i class="fa-solid fa-clipboard-list pr-2"></i>
                 {{ item }}
@@ -80,7 +80,7 @@
     <div class="border w-full shadow-2xl shadow-blue-200 rounded-3xl">
       <div class="grid md:grid-cols-3">
         <div class="md:col-span-2 m-6">
-          <p class="pt-4 text-lg">{{ data!.LargeDescription }}</p>
+          <p class="pt-4 text-lg">{{ data!.largeDescription }}</p>
         </div>
         <div
           class="bg-black text-white rounded-3xl row-start-1 md:row-auto m-4"
@@ -89,7 +89,7 @@
             <p class="text-2xl text-center font-bold pb-2">
               {{ "Incluye" | translate }}:
             </p>
-            <ol class="pl-4" *ngFor="let item of data!.Included">
+            <ol class="pl-4" *ngFor="let item of data!.included">
               <li class="text-xl">
                 <i class="fa-solid fa-circle-check pr-2"></i>
                 {{ item }}

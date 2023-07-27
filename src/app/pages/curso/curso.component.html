@@ -55,10 +55,12 @@
       >
         <div class="m-6">
           <div class="flex pb-2 pt-4 md:pt-0">
-            <p class="text-5xl font-medium">{{ data!.title }}</p>
-            <p class="ml-12 text-5xl font-semibold">${{ data!.price }}</p>
+            <p class="text-5xl font-medium">{{ data!.course.title }}</p>
+            <p class="ml-12 text-5xl font-semibold">
+              ${{ data!.course.price }}
+            </p>
           </div>
-          <p class="py-4 text-lg">{{ data!.description }}</p>
+          <p class="py-4 text-lg">{{ data!.course.description }}</p>
           <p class="font-bold text-lg pb-3">{{ "Itinerario" | translate }}:</p>
           <div class="pb-6">
             <ol class="pl-4" *ngFor="let item of data!.itinerary">
@@ -85,7 +87,7 @@
             <p class="text-2xl text-center font-bold pb-2">
               {{ "Incluye" | translate }}:
             </p>
-            <ol class="pl-4" *ngFor="let item of data!.included">
+            <ol class="pl-4" *ngFor="let item of data!.course.included">
               <li class="text-xl">
                 <i class="fa-solid fa-circle-check pr-2"></i>
                 {{ item }}

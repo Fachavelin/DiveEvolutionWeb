@@ -32,13 +32,14 @@ export class CursoComponent implements OnInit {
       .pipe(switchMap(({ id }) => this.ps.cargarDatosCursoPorId(id)))
       .subscribe((data) => {
         this.data = data;
-        /* console.log(this.data); */
+        console.log(this.data);
+        console.log(data);
       });
     this.activatedRoute.params
       .pipe(switchMap(({ id }) => this.ps.cargarImagenesCursoPorId(id)))
       .subscribe((dataImg) => {
         this.dataImg = dataImg;
-        /* console.log(this.data); */
+        console.log(this.data);
       });
   }
 }
